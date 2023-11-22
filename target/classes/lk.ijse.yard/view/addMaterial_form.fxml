@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="620.0" style="-fx-background-color: #f7f6ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.AddMaterialFormController">
+   <children>
+      <Text fill="#32678d" layoutX="232.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Material " wrappingWidth="157.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="71.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Material ID" wrappingWidth="108.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="71.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Material Type" wrappingWidth="124.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="73.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Material Name" wrappingWidth="131.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="71.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Available Qty " wrappingWidth="124.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="34.0" fitWidth="328.0" layoutX="251.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Rectangle%2050.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="328.0" layoutX="251.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Rectangle%2050.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="328.0" layoutX="251.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Rectangle%2050.png" />
+         </image>
+      </ImageView>
+      <JFXComboBox fx:id="cmbBoxMaterialType" focusColor="#f87d64" layoutX="255.0" layoutY="234.0" onAction="#OnActionCmbType" prefHeight="37.0" prefWidth="224.0" promptText="Select Main Type">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXComboBox>
+      <TextField fx:id="txtFieldMaterialId" layoutX="256.0" layoutY="110.0" prefHeight="24.0" prefWidth="240.0" style="-fx-background-color: white;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <TextField fx:id="txtFieldQtyAvailable" layoutX="256.0" layoutY="330.0" prefHeight="24.0" prefWidth="240.0" style="-fx-background-color: white;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <TextField fx:id="txtFieldMaterialName" layoutX="256.0" layoutY="180.0" prefHeight="24.0" prefWidth="240.0" style="-fx-background-color: white;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></TextField>
+      <Label fx:id="unitLabel" layoutX="516.0" layoutY="324.0" prefHeight="34.0" prefWidth="49.0" textFill="#403f40">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <JFXButton layoutX="251.0" layoutY="413.0" onAction="#btnADDOnAction" prefHeight="37.0" prefWidth="147.0" style="-fx-background-color: #a6d4eb;" text="ADD " textFill="#545353">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="385.0" layoutY="551.0" onAction="#btnMRDetailsOnAction" prefHeight="38.0" prefWidth="224.0" style="-fx-background-color: #96d64f;" text="Material Received Details" textFill="WHITE">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

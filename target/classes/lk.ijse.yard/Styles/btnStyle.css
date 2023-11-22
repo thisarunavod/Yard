@@ -1,0 +1,10 @@
+.slidebar:hover{
+    -fx-background-color: #72e851;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 0px 0px 0px 5px;
+    -fx-text-fill: #f8b8b8;
+}
+.slidebar2:focused{
+    -fx-background-color: #f34343;
+    -fx-text-fill: #00ff00
+}

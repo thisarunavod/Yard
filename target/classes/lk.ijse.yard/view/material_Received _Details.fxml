@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainRoot" prefHeight="643.0" prefWidth="1345.0" style="-fx-background-color: #f7f6ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.MaterialReceivedDetailsController">
+   <children>
+      <Text fill="#32678d" layoutX="268.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Material Received Details" wrappingWidth="313.0">
+         <font>
+            <Font name="Andika Bold" size="25.0" />
+         </font>
+      </Text>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="14.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Select Material  ID" wrappingWidth="188.67822265625">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbMaterialID" layoutX="25.0" layoutY="73.0" onAction="#cmbMaterialIDOnAction" onMousePressed="#cmbIDonMousePressed" prefHeight="24.0" prefWidth="180.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXComboBox>
+      <JFXComboBox fx:id="cmbSupplierID" layoutX="25.0" layoutY="273.0" onMousePressed="#cmbSupplierIDOnMosePressed" prefHeight="24.0" prefWidth="180.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXComboBox>
+      <JFXButton layoutX="25.0" layoutY="106.0" onAction="#btnAddNewMaterialID" prefHeight="24.0" prefWidth="88.0" style="-fx-background-color: #a6d4eb;" text="ADD new ID" textFill="#545353">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="25.0" layoutY="306.0" onAction="#btnNewSupplierID" prefHeight="24.0" prefWidth="88.0" style="-fx-background-color: #a6d4eb;" text="ADD new ID" textFill="#545353">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Material Name" wrappingWidth="188.67822265625">
+         <font>
+            <Font name="Andika" size="14.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Select Mterial  Type" wrappingWidth="188.67822265625">
+         <font>
+            <Font name="Andika" size="14.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbMaterialType" layoutX="25.0" layoutY="442.0" prefHeight="24.0" prefWidth="180.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXComboBox>
+      <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Enter Quantity" wrappingWidth="108.67822265625">
+         <font>
+            <Font name="Andika" size="14.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblUnit" layoutX="143.0" layoutY="511.0" prefHeight="23.0" prefWidth="37.0" />
+      <JFXButton layoutX="25.0" layoutY="554.0" onAction="#btnAddMAterialReceivedDetails" prefHeight="34.0" prefWidth="189.0" style="-fx-background-color: #96d64f;" text="ADD for Received Details" textFill="WHITE">
+         <font>
+            <Font name="KacstScreen" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <DatePicker fx:id="datePicker" layoutX="22.0" layoutY="205.0" promptText="Select Received Date">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </DatePicker>
+      <JFXTextArea fx:id="txtFieldMaterialReceivedID" layoutX="23.0" layoutY="159.0" prefHeight="34.0" prefWidth="180.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <JFXTextArea fx:id="txtMaterialName" layoutX="23.0" layoutY="373.0" prefHeight="34.0" prefWidth="180.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <JFXTextArea fx:id="txtMaterialQty" layoutX="26.0" layoutY="503.0" prefHeight="34.0" prefWidth="88.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Enter Received ID &amp; Date" wrappingWidth="188.67822265625">
+         <font>
+            <Font name="Andika" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="14.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Select Supplier  ID" wrappingWidth="188.67822265625">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tableReceivedDetails" layoutX="270.0" layoutY="56.0" prefHeight="531.0" prefWidth="1061.0">
+        <columns>
+          <TableColumn fx:id="colDate" minWidth="0.0" prefWidth="102.0" text="Date" />
+          <TableColumn fx:id="colReceivedID" minWidth="0.0" prefWidth="110.0" text="Recive ID" />
+            <TableColumn fx:id="colSupID" prefWidth="100.0" text="Sup_ID" />
+            <TableColumn fx:id="colMaterialID" prefWidth="105.0" text="m_ID" />
+            <TableColumn fx:id="colName" prefWidth="220.0" text="Name" />
+            <TableColumn fx:id="colType" prefWidth="135.0" text="Type" />
+            <TableColumn fx:id="colQty" minWidth="0.0" prefWidth="83.0" text="Qty" />
+            <TableColumn fx:id="colUnit" prefWidth="59.0" text="Unit" />
+            <TableColumn fx:id="colAction" prefWidth="77.0" text="del" />
+            <TableColumn fx:id="colActionUpdate" prefWidth="76.0" text="upd" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="6.0" layoutY="590.0" onAction="#btnBackOnAction" prefHeight="34.0" prefWidth="103.0" text="BACK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Circle_Carret_Left.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.MaterialListFormController">
+   <children>
+      <TableView fx:id="tableViewMaterialList" layoutX="23.0" layoutY="66.0" prefHeight="488.0" prefWidth="575.0" style="-fx-background-color: #f7f6ff;">
+         <columns>
+            <TableColumn fx:id="colMaterialID" prefWidth="75.0" text="M _ ID" />
+            <TableColumn fx:id="colName" prefWidth="146.0" text="NAME" />
+            <TableColumn fx:id="colType" prefWidth="165.0" text="TYPE" />
+            <TableColumn fx:id="colQty" prefWidth="122.0" text="QTY(available)" />
+            <TableColumn fx:id="colUnit" prefWidth="66.0" text="Unit" />
+         </columns>
+      </TableView>
+      <Text fill="#32678d" layoutX="245.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Material List" wrappingWidth="144.7294921875">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="436.0" layoutY="561.0" onAction="#btnOnActionReportMaterialList" prefHeight="34.0" prefWidth="162.0" style="-fx-background-color: #ff8d81;" text="Material ListReport " textFill="WHITE">
+         <font>
+            <Font name="Andika Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text fill="#ff8d81" layoutX="405.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Material List" wrappingWidth="144.7294921875">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

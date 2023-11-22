@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainRoot" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.EmployeeManageFormController">
+   <children>
+      <AnchorPane fx:id="root" layoutX="289.0" layoutY="2.0" prefHeight="600.0" prefWidth="620.0" style="-fx-background-color: #f7f6ff;" />
+      <ImageView fitHeight="64.0" fitWidth="224.0" layoutX="33.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnADDEmployee" layoutX="40.0" layoutY="218.0" onAction="#btnAddEmployeeOnAction" prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: white;" text="ADD Employee" textFill="#737079">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="62.0" fitWidth="224.0" layoutX="33.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="39.0" layoutY="87.0" onAction="#btnDriverListOnAction" prefHeight="45.9" prefWidth="211.0" style="-fx-background-color: white;" text="DRIVER LIST" textFill="#737079">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="64.0" fitWidth="224.0" layoutX="33.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnUpdateEmployee" layoutX="40.0" layoutY="288.0" onAction="#btnOnActionUpdateEmployee" prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: white;" text="UPDATE Employee Details" textFill="#737079">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="64.0" fitWidth="224.0" layoutX="33.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnListOfEmployee" layoutX="40.0" layoutY="358.0" onAction="#btnOnActionListOfEmployee" prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: white;" text="LIST of  Employees" textFill="#737079">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="64.0" fitWidth="224.0" layoutX="33.0" layoutY="473.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="40.0" layoutY="478.0" onAction="#btnDeleteEmployeeOnAction" prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: white;" text="DELETE Employee !!" textFill="#d76961">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text fill="#7b7986" fontSmoothingType="LCD" layoutX="19.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Manage" wrappingWidth="263.7294921875">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="21.0" layoutY="551.0" onAction="#btnBackOnAction" prefHeight="44.0" prefWidth="103.0" text="BACK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Circle_Carret_Left.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <ImageView fitHeight="62.0" fitWidth="224.0" layoutX="33.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="39.0" layoutY="153.0" onAction="#btnLaborListOnAction" prefHeight="45.9" prefWidth="211.0" style="-fx-background-color: white;" text="LABOR LIST" textFill="#737079">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

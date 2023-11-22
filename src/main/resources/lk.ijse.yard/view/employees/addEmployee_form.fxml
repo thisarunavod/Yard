@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="620.0" style="-fx-background-color: #f7f6ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.AddEmployeeFormController">
+   <children>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="89.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Employee ID" wrappingWidth="108.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="93.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Address" wrappingWidth="124.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="91.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Employee Name" wrappingWidth="131.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXTextArea fx:id="txtFieldEmpName" layoutX="264.0" layoutY="251.0" prefHeight="34.0" prefWidth="267.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <JFXTextArea fx:id="txtFieldEmployeeID" layoutX="264.0" layoutY="181.0" prefHeight="34.0" prefWidth="267.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <JFXTextArea fx:id="txtFieldEmpAddress" layoutX="264.0" layoutY="321.0" prefHeight="34.0" prefWidth="267.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="92.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Job Title" wrappingWidth="124.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbJobTitle" layoutX="264.0" layoutY="110.0" onAction="#cmbJobTitleOnAction" prefHeight="34.0" prefWidth="171.0" />
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="233.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADD Employee" wrappingWidth="171.0">
+         <font>
+            <Font name="Andika Bold" size="24.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="242.0" layoutY="456.0" onAction="#btnOnActionAddEmployee" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #96d64f;" text="ADD " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

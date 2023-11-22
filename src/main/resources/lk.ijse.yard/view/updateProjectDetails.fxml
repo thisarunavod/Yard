@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="mainRoot" prefHeight="599.0" prefWidth="1122.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.UpdateProjectDetailsController">
+   <children>
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="63.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UPDATE Project Details" wrappingWidth="278.7294921875">
+         <font>
+            <Font name="Andika Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="64.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Select Project  NO" wrappingWidth="188.67822265625">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbProjectNO" layoutX="75.0" layoutY="107.0" onAction="#cmbProjectNOOnAction" onMousePressed="#cmbIDonMousePressed" prefHeight="24.0" prefWidth="180.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="63.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Location" wrappingWidth="124.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="65.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Project Name" wrappingWidth="131.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="63.0" layoutY="355.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Completion Date" wrappingWidth="124.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXTextArea fx:id="txtFieldProjectName" layoutX="238.0" layoutY="176.0" prefHeight="34.0" prefWidth="267.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <JFXTextArea fx:id="txtFieldLocation" layoutX="238.0" layoutY="246.0" prefHeight="34.0" prefWidth="267.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <DatePicker fx:id="datePicker" layoutX="238.0" layoutY="338.0" />
+      <JFXButton layoutX="242.0" layoutY="426.0" onAction="#btnOnActionUPDATEProject" prefHeight="55.0" prefWidth="204.0" style="-fx-background-color: #96d64f;" text="UPDATE PROJECT" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="30.0" layoutY="562.0" onAction="#btnBackOnAction" prefHeight="44.0" prefWidth="103.0" text="BACK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Circle_Carret_Left.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <TableView fx:id="tableMaterialRequiremets" layoutX="573.0" layoutY="76.0" prefHeight="488.0" prefWidth="524.0">
+         <columns>
+            <TableColumn fx:id="colMID" prefWidth="107.0" text="Material ID" />
+            <TableColumn fx:id="colMName" prefWidth="223.0" text="Material Name" />
+            <TableColumn fx:id="colRQty" prefWidth="120.0" text="Required Qty" />
+            <TableColumn fx:id="colUnit" prefWidth="73.0" text="Unit" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

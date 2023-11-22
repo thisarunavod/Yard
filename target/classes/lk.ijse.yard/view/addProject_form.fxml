@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="mainRoot" prefHeight="599.0" prefWidth="1122.0" style="-fx-background-color: #f7f6ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.AddProjectFormController">
+   <children>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="53.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Project NO" wrappingWidth="108.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="53.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Location" wrappingWidth="124.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="55.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Project Name" wrappingWidth="131.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="53.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Completion Date" wrappingWidth="124.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="53.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADD Project" wrappingWidth="143.7294921875">
+         <font>
+            <Font name="Andika Bold" size="24.0" />
+         </font>
+      </Text>
+      <JFXTextArea fx:id="txtFieldProjectName" layoutX="228.0" layoutY="166.0" prefHeight="34.0" prefWidth="267.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <JFXTextArea fx:id="txtFieldProjectNo" layoutX="228.0" layoutY="96.0" prefHeight="34.0" prefWidth="267.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <JFXTextArea fx:id="txtFieldLocation" layoutX="228.0" layoutY="236.0" prefHeight="34.0" prefWidth="267.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <DatePicker fx:id="datePicker" layoutX="228.0" layoutY="328.0" />
+      <TableView fx:id="tableMaterialRequiremets" layoutX="563.0" layoutY="66.0" prefHeight="488.0" prefWidth="524.0">
+        <columns>
+          <TableColumn fx:id="colMID" prefWidth="107.0" text="Material ID" />
+          <TableColumn fx:id="colMName" prefWidth="223.0" text="Material Name" />
+            <TableColumn fx:id="colRQty" prefWidth="120.0" text="Required Qty" />
+            <TableColumn fx:id="colUnit" prefWidth="73.0" text="Unit" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="232.0" layoutY="416.0" onAction="#btnOnActionAddProject" prefHeight="55.0" prefWidth="167.0" style="-fx-background-color: #96d64f;" text="ADD PROJECT" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="20.0" layoutY="552.0" onAction="#btnBackOnAction" prefHeight="44.0" prefWidth="103.0" text="BACK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Circle_Carret_Left.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

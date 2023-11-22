@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainRoot" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.MaterialManageFormController">
+   <children>
+      <Text fill="#7b7986" fontSmoothingType="LCD" layoutX="12.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Materials Manage" wrappingWidth="252.7294921875">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="64.0" fitWidth="224.0" layoutX="33.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnADDmaterials" layoutX="40.0" layoutY="168.0" onAction="#btnAddMaterialsOnAction" prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: white;" text="ADD Materials" textFill="#737079">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <AnchorPane fx:id="root" layoutX="279.0" prefHeight="600.0" prefWidth="620.0" style="-fx-background-color: #f7f6ff;" />
+      <Text fill="#f7f6ff" fontSmoothingType="LCD" layoutX="12.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Materials Manage" wrappingWidth="252.7294921875">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="11.0" layoutY="541.0" onAction="#btnBackOnAction" prefHeight="44.0" prefWidth="103.0" text="BACK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Circle_Carret_Left.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <ImageView fitHeight="62.0" fitWidth="224.0" layoutX="33.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="39.0" layoutY="97.0" onAction="#btnReceivedDetailsOnAction" prefHeight="45.9" prefWidth="211.0" style="-fx-background-color: white;" text="Material Received Details" textFill="#737079">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="64.0" fitWidth="224.0" layoutX="33.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnADDmaterials1" layoutX="40.0" layoutY="238.0" onAction="#btnOnActionUpdateMaterials" prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: white;" text="UPDATE Materials" textFill="#737079">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="64.0" fitWidth="224.0" layoutX="33.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnADDmaterials11" layoutX="40.0" layoutY="308.0" onAction="#btnOnActionMaterialList" prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: white;" text="LIST of  Materials" textFill="#737079">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="64.0" fitWidth="224.0" layoutX="33.0" layoutY="443.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnADDmaterials111" layoutX="40.0" layoutY="448.0" onAction="#btnDeleteMaterialOnAction" prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: white;" text="DELETE Materials !!!!" textFill="#d76961">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

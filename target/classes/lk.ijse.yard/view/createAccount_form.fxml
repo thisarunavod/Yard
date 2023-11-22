@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.CreateAccountFormController">
+   <children>
+      <ImageView fitHeight="413.0" fitWidth="281.0" layoutX="310.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/CA.png" />
+         </image>
+      </ImageView>
+      <TextField layoutX="340.0" layoutY="204.0" prefHeight="20.0" prefWidth="223.0" style="-fx-background-color: F5F5F5;" />
+      <Text fill="#4a4a4a" layoutX="341.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="__________________________________" wrappingWidth="223.0" />
+      <Text fill="#4a4a4a" layoutX="341.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="__________________________________" wrappingWidth="223.0" />
+      <Text fill="#4a4a4a" layoutX="341.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="__________________________________" wrappingWidth="223.0" />
+      <Text fill="#4a4a4a" layoutX="343.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="__________________________________" wrappingWidth="223.0" />
+      <TextField layoutX="340.0" layoutY="145.0" prefHeight="24.0" prefWidth="223.0" style="-fx-background-color: F5F5F5;" />
+      <TextField layoutX="340.0" layoutY="264.0" prefHeight="20.0" prefWidth="223.0" style="-fx-background-color: F5F5F5;" />
+      <TextField layoutX="342.0" layoutY="330.0" prefHeight="20.0" prefWidth="223.0" style="-fx-background-color: F5F5F5;" />
+      <Text fill="#575757" fontSmoothingType="LCD" layoutX="470.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Add USER" wrappingWidth="99.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Text>
+      <Text fill="#575757" fontSmoothingType="LCD" layoutX="330.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt; Back" wrappingWidth="99.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Text>
+   </children>
+</AnchorPane>

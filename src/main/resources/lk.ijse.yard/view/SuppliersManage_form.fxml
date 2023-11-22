@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="mainRoot" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.SuppliersManageFormController">
+   <children>
+      <ImageView fitHeight="56.0" fitWidth="210.0" layoutX="26.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="210.0" layoutX="26.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="210.0" layoutX="26.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="56.0" fitWidth="210.0" layoutX="26.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="33.0" layoutY="151.0" onAction="#btnOnActionUpdateSupplier" prefHeight="44.0" prefWidth="196.0" style="-fx-background-color: white;" text="UPDATE sup Details" textFill="#737079">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="33.0" layoutY="342.0" onAction="#btnDeleteSupplierOnAction" prefHeight="44.0" prefWidth="196.0" style="-fx-background-color: white;" text="DELETE Supplier " textFill="#d08172">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="33.0" layoutY="211.0" onAction="#btnOnActionViewSupplierList" prefHeight="44.0" prefWidth="196.0" style="-fx-background-color: white;" text="View Supplier List" textFill="#737079">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnADDmaterials" layoutX="33.0" layoutY="91.0" onAction="#btnAddSupplierOnAction" prefHeight="44.0" prefWidth="196.0" style="-fx-background-color: white;" text="ADD Suppliers" textFill="#737079">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text fill="#7b7986" fontSmoothingType="LCD" layoutX="15.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suppliers Manage" wrappingWidth="255.7294921875">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <AnchorPane fx:id="root" layoutX="278.0" layoutY="-3.0" prefHeight="600.0" prefWidth="620.0" style="-fx-background-color: #f7f6ff;" />
+      <JFXButton layoutX="21.0" layoutY="551.0" onAction="#btnBackOnAction" prefHeight="44.0" prefWidth="103.0" text="BACK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Assets/Circle_Carret_Left.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

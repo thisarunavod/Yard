@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="620.0" style="-fx-background-color: #f7f6ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.DeleteProjectFormController">
+   <children>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="74.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Select Project  NO" wrappingWidth="188.67822265625">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbProjectNO" layoutX="85.0" layoutY="147.0" onAction="#cmbProjectNOOnAction" onMousePressed="#cmbIDonMousePressed" prefHeight="24.0" prefWidth="180.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+      <Text fill="#d78570" fontSmoothingType="LCD" layoutX="216.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELETE Project " wrappingWidth="188.67822265625">
+         <font>
+            <Font name="Andika Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="76.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Location" wrappingWidth="124.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="75.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Project Name" wrappingWidth="131.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXTextArea fx:id="txtFieldProjectName" layoutX="248.0" layoutY="216.0" prefHeight="34.0" prefWidth="267.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <JFXTextArea fx:id="txtFieldLocation" layoutX="251.0" layoutY="286.0" prefHeight="34.0" prefWidth="267.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="77.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Completion Date" wrappingWidth="124.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="datePicker" layoutX="252.0" layoutY="374.0" />
+      <JFXButton layoutX="248.0" layoutY="500.0" onAction="#btnOnActionDELETEProject" prefHeight="39.0" prefWidth="125.0" style="-fx-background-color: #d78570;" text="DELETE !" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

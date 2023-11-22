@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="620.0" style="-fx-background-color: #f7f6ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.AddSupplierFormController">
+   <children>
+      <Text fill="#32678d" layoutX="232.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Supplier " wrappingWidth="157.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="81.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Supplier ID" wrappingWidth="108.7294921875">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="81.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Company Name" wrappingWidth="137.7294921875">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="81.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Company Email " wrappingWidth="143.7294921875">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="34.0" fitWidth="328.0" layoutX="261.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Rectangle%2050.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="328.0" layoutX="261.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Rectangle%2050.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="328.0" layoutX="261.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Rectangle%2050.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtFieldSupplierId" layoutX="266.0" layoutY="120.0" prefHeight="24.0" prefWidth="240.0" style="-fx-background-color: white;" />
+      <TextField fx:id="txtFieldEmail" layoutX="266.0" layoutY="260.0" prefHeight="24.0" prefWidth="240.0" style="-fx-background-color: white;" />
+      <TextField fx:id="txtFieldCompanyName" layoutX="266.0" layoutY="190.0" prefHeight="24.0" prefWidth="240.0" style="-fx-background-color: white;" />
+      <JFXButton layoutX="265.0" layoutY="361.0" onAction="#btnADDOnAction" prefHeight="37.0" prefWidth="157.0" style="-fx-background-color: #a6d4eb;" text="ADD " textFill="#545353">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="387.0" layoutY="552.0" onAction="#btnMRDetailsOnAction" prefHeight="38.0" prefWidth="224.0" style="-fx-background-color: #96d64f;" text="Material Received Details" textFill="WHITE">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

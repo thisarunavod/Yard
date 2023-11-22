@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="620.0" style="-fx-background-color: #f7f6ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.UpdateMaterialFormController">
+   <children>
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="51.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Select  Material ID" wrappingWidth="158.7294921875">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbMaterialID" focusColor="#f87d64" layoutX="282.0" layoutY="100.0" onAction="#OnActioncmbIDSelect" prefHeight="37.0" prefWidth="224.0" promptText="Select Material ID" />
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="51.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Enter  New Material name" wrappingWidth="217.7294921875">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="51.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Select   Material type" wrappingWidth="186.7294921875">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbMaterialType" focusColor="#f87d64" layoutX="282.0" layoutY="310.0" onAction="#cmbBoxOnActionSelectType" prefHeight="37.0" prefWidth="224.0" promptText="Select Material Type" />
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="51.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* New  available Qty " wrappingWidth="165.7294921875">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="34.0" fitWidth="328.0" layoutX="282.0" layoutY="255.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Rectangle%2050.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtFieldNewName" layoutX="287.0" layoutY="260.0" prefHeight="24.0" prefWidth="240.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="34.0" fitWidth="328.0" layoutX="281.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Rectangle%2050.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtFieldNewQtyAvailable" layoutX="286.0" layoutY="400.0" prefHeight="24.0" prefWidth="240.0" style="-fx-background-color: white;" />
+      <Label fx:id="labelUnit" layoutX="546.0" layoutY="394.0" prefHeight="34.0" prefWidth="49.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <JFXButton layoutX="232.0" layoutY="506.0" onAction="#btnUPDATEOnAction" prefHeight="37.0" prefWidth="157.0" style="-fx-background-color: #a6d4eb;" text="UPDATE" textFill="#545353">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="51.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Enter  New ID " wrappingWidth="179.7294921875">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="34.0" fitWidth="328.0" layoutX="282.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/Rectangle%2050.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtFieldnewID" layoutX="287.0" layoutY="190.0" onAction="#txtnewIDOnAction" prefHeight="24.0" prefWidth="240.0" style="-fx-background-color: white;" />
+      <Text fill="#32678d" layoutX="205.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Materials" wrappingWidth="210.7294921875">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
