@@ -107,8 +107,25 @@ public class MaterialManageFormController {
             stage.setScene(scene);
             stage.centerOnScreen();
         } else {
-            new Alert(Alert.AlertType.INFORMATION,"Not Added Items !!").show();
+            new Alert(Alert.AlertType.INFORMATION,"Not Added Materials !!").show();
         }
+    }
+
+    @FXML
+    void btnIssueDetailsOnAction(ActionEvent event) throws IOException {
+
+        setRawMaterialCount();
+        if (rawCountItem > 0){
+            Parent rootNode = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/material_issue_details_form.fxml"));
+            Scene scene = new Scene(rootNode);
+            Stage stage = (Stage) this.mainRoot.getScene().getWindow();
+            stage.setTitle("Issue Details");
+            stage.setScene(scene);
+            stage.centerOnScreen();
+        } else {
+            new Alert(Alert.AlertType.INFORMATION,"Not Added Materials !!").show();
+        }
+
     }
 
     @FXML
@@ -123,6 +140,7 @@ public class MaterialManageFormController {
 
     }
 
+
     private void loadAddMaterialsForm() throws IOException {
 
         nodeAddmaterial = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/addMaterial_form.fxml"));
@@ -130,5 +148,6 @@ public class MaterialManageFormController {
         this.root.getChildren().add(nodeAddmaterial);
 
     }
+
 
 }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="620.0" style="-fx-background-color: #f7f6ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.AddMachineFormController">
+   <children>
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="242.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADD Machine" wrappingWidth="158.0">
+         <font>
+            <Font name="Andika Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="101.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Machine ID " wrappingWidth="131.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXTextArea fx:id="txtFieldMachineID" layoutX="274.0" layoutY="112.0" prefHeight="34.0" prefWidth="267.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="101.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Machine Name" wrappingWidth="131.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXTextArea fx:id="txtFieldMachineName" layoutX="274.0" layoutY="222.0" prefHeight="34.0" prefWidth="267.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <JFXButton layoutX="237.0" layoutY="395.0" onAction="#btnOnActionAddMachine" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #96d64f;" text="ADD" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

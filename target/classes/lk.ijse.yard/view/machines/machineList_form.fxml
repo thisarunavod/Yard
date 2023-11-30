@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="620.0" style="-fx-background-color: #f7f6ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.MachineListFormController">
+   <children>
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="26.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Machines List" wrappingWidth="166.0">
+         <font>
+            <Font name="Andika Bold" size="24.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tableMachines" layoutX="25.0" layoutY="59.0" prefHeight="501.0" prefWidth="574.0">
+        <columns>
+          <TableColumn fx:id="colMachineID" prefWidth="117.0" text="Machine-ID" />
+          <TableColumn fx:id="colMachineName" prefWidth="223.0" text="Name" />
+            <TableColumn fx:id="colMachineStatus" prefWidth="233.0" text="Status" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

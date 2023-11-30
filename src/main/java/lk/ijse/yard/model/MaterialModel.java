@@ -3,6 +3,7 @@ package lk.ijse.yard.model;
 
 import lk.ijse.yard.db.DbConnection;
 import lk.ijse.yard.dto.MaterialDto;
+import lk.ijse.yard.dto.MaterialIssuedDetailsDto;
 import lk.ijse.yard.dto.MaterialReceivedDetailsDto;
 import lombok.NoArgsConstructor;
 
@@ -29,6 +30,33 @@ public class MaterialModel {
         Connection connection = DbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);
         pstm.setDouble(1,dto.getReceivedQty());
+        pstm.setString(2,dto.getMaterialID());
+
+        return pstm.executeUpdate() > 0 ;
+
+    }
+
+
+
+    public static boolean updateQtyWIthIssued(MaterialIssuedDetailsDto issuedDto) throws SQLException {
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "UPDATE material SET qty_available = qty_available - ? WHERE m_id = ? ";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setDouble(1 , issuedDto.getIssuedQty());
+        pstm.setString(2, issuedDto.getMaterialID());
+
+        return pstm.executeUpdate() > 0 ;
+
+    }
+
+    public static boolean updateQtyWithDeleteIssuedDetails(MaterialIssuedDetailsDto dto) throws SQLException {
+
+        String sql = "UPDATE material SET qty_available = qty_available + ? WHERE m_id = ? ";
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setDouble(1,dto.getIssuedQty());
         pstm.setString(2,dto.getMaterialID());
 
         return pstm.executeUpdate() > 0 ;
@@ -144,6 +172,20 @@ public class MaterialModel {
 
         return  pstm.executeUpdate() > 0 ;
     }
+
+
+    public double chekStock(String materialID) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "SELECT qty_available FROM material WHERE m_id = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1,materialID);
+        ResultSet resultSet = pstm.executeQuery();
+        double qty = 0.0;
+        if (resultSet.next()){ qty = resultSet.getDouble(1);}
+
+        return qty;
+    }
+
 
 
 }

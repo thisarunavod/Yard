@@ -12,6 +12,7 @@ import lk.ijse.yard.dto.MaterialDto;
 import lk.ijse.yard.dto.Tm.DriverTm;
 import lk.ijse.yard.dto.Tm.MaterialTm;
 import lk.ijse.yard.model.EmployeeModel;
+import lk.ijse.yard.model.VehicleModel;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -59,27 +60,36 @@ public class DriverListFormController {
             for (int i = 0; i < dtoList.size(); i++) {
 
 
+                boolean vehicleInYard  = VehicleModel.isOnYard(dtoList.get(i).getEmpID());
+
                 JFXToggleButton btn = new JFXToggleButton();
                 btn.setCursor(Cursor.HAND);
-                if (dtoList.get(i).getAvailability().equals("NA")){  btn.setSelected(false); btn.setText(" is OUT");} else { btn.setSelected(true); btn.setText(" is IN"); }
+                if (vehicleInYard){
+
+                    if (dtoList.get(i).getAvailability().equals("NA")){  btn.setSelected(false); btn.setText(" is OUT");} else { btn.setSelected(true); btn.setText(" is IN"); }
 
 
-                var dto = dtoList.get(i);
-                btn.setOnAction((e) ->{
+                    var dto = dtoList.get(i);
+                    btn.setOnAction((e) ->{
 
-                    if (btn.isSelected()){
-                        try {
-                            boolean changeAv = employeeModel.changeAvailability(dto);
-                            if (changeAv) { btn.setText("is IN");}
-                        } catch (SQLException throwables) { throwables.printStackTrace();}
-                    }else{
-                        try {
-                            boolean changeAv = employeeModel.changeNonAvailability(dto);
-                            if (changeAv) { btn.setText("is OUT"); }
-                        } catch (SQLException throwables) { throwables.printStackTrace(); }
-                    }
+                        if (btn.isSelected()){
+                            try {
+                                boolean changeAv = employeeModel.changeAvailability(dto , "AV");
+                                if (changeAv) { btn.setText("is IN");}
+                            } catch (SQLException throwables) { throwables.printStackTrace();}
+                        }else{
+                            try {
+                                boolean changeAv = employeeModel.changeAvailability(dto,"NA");
+                                if (changeAv) { btn.setText("is OUT"); }
+                            } catch (SQLException throwables) { throwables.printStackTrace(); }
+                        }
 
-                });
+                    });
+                } else {
+                    btn.setText("ON Root");
+                    btn.setSelected(true);
+                    btn.setDisable(true);
+                }
 
                 var tm = new DriverTm(
                         dtoList.get(i).getEmpID(),

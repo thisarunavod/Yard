@@ -65,6 +65,9 @@ public class LoginFormController {
     @FXML
     void OnForgotPassword(MouseEvent event) {
 
+
+
+
     }
 
     @FXML

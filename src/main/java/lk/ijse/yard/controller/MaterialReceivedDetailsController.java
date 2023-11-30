@@ -243,7 +243,6 @@ public class MaterialReceivedDetailsController {
 
             try {
                 boolean isSaved = materialReceivedDetailsModel.addMaterialReceivedDetails(receivedDetailsDto);
-                System.out.println(isSaved);
                 if (isSaved){
                     loadAllReceivedDetails();
                     setCellValueFactory();

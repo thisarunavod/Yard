@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainRoot" prefHeight="600.0" prefWidth="1014.0" style="-fx-background-color: #f7f6ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.VehicleRepairFormController">
+   <children>
+      <Text fill="#32678d" fontSmoothingType="LCD" layoutX="26.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Repair Details" wrappingWidth="173.0">
+         <font>
+            <Font name="Andika Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="24.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Vehicle ID " wrappingWidth="131.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbVehicleID" layoutX="36.0" layoutY="211.0" onAction="#cmbVehicleIDOnAction" onMousePressed="#cmbVehicleIDonActionMousePressed" prefHeight="34.0" prefWidth="144.0" promptText="select V - ID" />
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="24.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Vehicle Name" wrappingWidth="131.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblVehicleName" layoutX="36.0" layoutY="288.0" prefHeight="34.0" prefWidth="215.0" />
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="24.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Enter Repair ID " wrappingWidth="131.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXTextArea fx:id="txtFieldVehicleRapairID" layoutX="36.0" layoutY="97.0" prefHeight="34.0" prefWidth="144.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="20.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Repair Cost " wrappingWidth="131.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXTextArea fx:id="txtFieldVehicleRapairCost" layoutX="33.0" layoutY="442.0" prefHeight="34.0" prefWidth="96.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <Label fx:id="lblVehicleName1" layoutX="143.0" layoutY="443.0" prefHeight="34.0" prefWidth="34.0" text="Rs" />
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="24.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Description " wrappingWidth="131.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXTextArea fx:id="txtFieldVehicleRapairDescription" layoutX="37.0" layoutY="362.0" prefHeight="34.0" prefWidth="173.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <JFXButton layoutX="26.0" layoutY="492.0" onAction="#btnOnActionAddRepairDetailsDetails" prefHeight="34.0" prefWidth="186.0" style="-fx-background-color: #96d64f;" text="Add Repair Details" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tableRepairDetails" layoutX="241.0" layoutY="22.0" prefHeight="537.0" prefWidth="756.0">
+        <columns>
+          <TableColumn fx:id="colRepID" prefWidth="68.0" text="Rep- ID" />
+          <TableColumn fx:id="colVehicleID" prefWidth="65.0" text="V - id" />
+            <TableColumn fx:id="colVehicleName" prefWidth="147.0" text="V - Name" />
+            <TableColumn fx:id="colDescription" prefWidth="185.0" text="Description" />
+            <TableColumn fx:id="colCost" prefWidth="94.0" text="Cost (Rs )" />
+            <TableColumn fx:id="colDate" minWidth="0.0" prefWidth="134.0" text="Date" />
+            <TableColumn fx:id="colDelete" minWidth="0.0" prefWidth="62.0" text="Action" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="823.0" layoutY="563.0" onAction="#btnOnActionReportOfRepairDetailsDetails" prefHeight="28.0" prefWidth="173.0" style="-fx-background-color: #96d64f;" text="Repair Details Report" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="5.0" layoutY="543.0" onAction="#btnBackOnAction" prefHeight="44.0" prefWidth="103.0" text="BACK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/Circle_Carret_Left.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <DatePicker fx:id="datePickerRepairdate" layoutX="33.0" layoutY="146.0" prefHeight="24.0" prefWidth="173.0" promptText="Select Repair Date" />
+   </children>
+</AnchorPane>

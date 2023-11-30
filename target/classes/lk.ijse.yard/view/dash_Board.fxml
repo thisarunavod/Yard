@@ -3,15 +3,21 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.DashBoardController">
+<AnchorPane fx:id="root" prefHeight="543.0" prefWidth="902.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.DashBoardController">
    <children>
-      <Text fill="#6e929e" fontSmoothingType="LCD" layoutX="289.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="YARD SYSTEM" wrappingWidth="322.13134765625">
+      <ImageView fitHeight="612.0" fitWidth="902.0" opacity="0.83" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/background.png" />
+         </image>
+      </ImageView>
+      <Text fill="#6e929e" fontSmoothingType="LCD" layoutX="219.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R &amp; J  YARD SYSTEM" wrappingWidth="458.13134765625">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>
@@ -97,5 +103,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <Label fx:id="label" layoutX="751.0" layoutY="25.0" prefHeight="44.0" prefWidth="148.0" textFill="#568cb5">
+         <font>
+            <Font name="Andika Bold" size="25.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

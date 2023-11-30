@@ -60,7 +60,20 @@ public class ProjectsFormController {
     }
 
     @FXML
-    void btnOnActionProjectList(ActionEvent event) {
+    void btnOnActionProjectList(ActionEvent event) throws IOException {
+
+
+    }
+
+    @FXML
+    void OnActionViewProjectDetails(ActionEvent event) throws IOException {
+
+        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/viewProjectDetails.fxml"));
+        Scene scene = new Scene(rootNode);
+        Stage stage = (Stage) this.mainRoot.getScene().getWindow();
+        stage.setTitle("View Project Details");
+        stage.setScene(scene);
+        stage.centerOnScreen();
 
     }
 

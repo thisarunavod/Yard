@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="620.0" style="-fx-background-color: #f7f6ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.DeleteEmployeeFormController">
+   <children>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="103.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Address" wrappingWidth="124.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="101.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Employee Name" wrappingWidth="131.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="102.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* SELECT Employee ID" wrappingWidth="150.7294921875">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbEmployeeID" layoutX="372.0" layoutY="120.0" onAction="#cmbEmployeIDOnAction" prefHeight="34.0" prefWidth="171.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+      <Text fill="#e1826a" fontSmoothingType="LCD" layoutX="195.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELETE Employee !!" wrappingWidth="231.0">
+         <font>
+            <Font name="Andika Bold" size="24.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="242.0" layoutY="416.0" onAction="#btnOnActionDeleteEmployee" prefHeight="34.0" prefWidth="167.0" style="-fx-background-color: #e1826a;" text="DELETE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label fx:id="lblEmployeeName" layoutX="322.0" layoutY="208.0" prefHeight="34.0" prefWidth="221.0" />
+      <Label fx:id="lblEmployeeAddress" layoutX="322.0" layoutY="287.0" prefHeight="34.0" prefWidth="221.0" />
+   </children>
+</AnchorPane>

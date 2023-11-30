@@ -76,7 +76,6 @@ public class UpdateProjectDetailsController {
         try {
             if (newProjectDetailsValidation && newMaterialRequirementValidation ){
                 var projectDto = new ProjectDto(projectNO,projectName,projectLocation,completionDate);
-
                 boolean updateProjectAllDetails = projectDetailsModel.updateAllProjectDetails(projectDto,obList);
                 if (updateProjectAllDetails){
                     new Alert(Alert.AlertType.INFORMATION," Successfully Updated !!").show();
@@ -98,11 +97,12 @@ public class UpdateProjectDetailsController {
     void cmbProjectNOOnAction(ActionEvent event) {
         String projectNO = cmbProjectNO.getValue();
         try {
-            ProjectDto dtoProject = projectDetailsModel.findOldProjectDetails(projectNO);
-            setOldValuesforFields(dtoProject);
-            loadAllReqMaterials(dtoProject);
-            setCellValueFactory();
-
+            if (projectNO != null){
+                ProjectDto dtoProject = projectDetailsModel.findOldProjectDetails(projectNO);
+                setOldValuesforFields(dtoProject);
+                loadAllReqMaterials(dtoProject);
+                setCellValueFactory();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -135,12 +135,14 @@ public class UpdateProjectDetailsController {
 
         try {
             List<ProjectDto> projectDtoList = projectDetailsModel.loadAllProjects();
+
             for (int i = 0; i < projectDtoList.size(); i++) {
 
                 obList.add(projectDtoList.get(i).getProjectNO());
 
             }
             cmbProjectNO.setItems(obList);
+
 
         } catch (SQLException e) {
             new Alert(Alert.AlertType.INFORMATION,"Not add Projects in the System !!").show();
@@ -158,7 +160,9 @@ public class UpdateProjectDetailsController {
 
                 TextField reqQty = new TextField();
                 String Qty = ProjectMaterialRequirementModel.getRequiredQty(dto.getProjectNO(),dtoList.get(i).getMaterialID());
-                reqQty.setText(Qty);
+
+                if (reqQty != null){ reqQty.setText(Qty); }
+
 
                 var tm = new ProjectMaterialRequirementTm(
                         dtoList.get(i).getMaterialID(),

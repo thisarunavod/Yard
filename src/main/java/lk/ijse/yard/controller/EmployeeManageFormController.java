@@ -76,10 +76,12 @@ public class EmployeeManageFormController {
 
 
     @FXML
-    void btnDeleteEmployeeOnAction(ActionEvent event) {
+    void btnDeleteEmployeeOnAction(ActionEvent event) throws IOException {
         setEmployeRawCount();
         if (EmployeRawCount > 0){
-
+            nodeDeleteEmployee = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/employees/deleteEmployee_form.fxml"));
+            this.root.getChildren().clear();
+            this.root.getChildren().add(nodeDeleteEmployee);
 
         }else{
             new Alert(Alert.AlertType.INFORMATION,"Not Added Employees !! ").show();

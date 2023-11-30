@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="mainRoot" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.MachineManageFormController">
+   <children>
+      <AnchorPane fx:id="root" layoutX="288.0" layoutY="1.0" prefHeight="600.0" prefWidth="620.0" style="-fx-background-color: #f7f6ff;" />
+      <ImageView fitHeight="62.0" fitWidth="224.0" layoutX="26.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="32.0" layoutY="165.0" onAction="#btnMachineListOnAction" prefHeight="45.9" prefWidth="211.0" style="-fx-background-color: white;" text="MACHINES LIST" textFill="#737079">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text fill="#7b7986" fontSmoothingType="LCD" layoutX="21.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine Manage" wrappingWidth="243.0">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="62.0" fitWidth="224.0" layoutX="26.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="32.0" layoutY="235.0" onAction="#btnAddMachineOnAction" prefHeight="45.9" prefWidth="211.0" style="-fx-background-color: white;" text="ADD Machine" textFill="#737079">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="62.0" fitWidth="224.0" layoutX="26.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="32.0" layoutY="305.0" onAction="#btnUpdateMachineDetailsOnAction" prefHeight="45.9" prefWidth="211.0" style="-fx-background-color: white;" text="UPDATE Machine Details" textFill="#737079">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="62.0" fitWidth="224.0" layoutX="26.0" layoutY="455.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="32.0" layoutY="459.0" onAction="#btnRemoveMachineOnAction" prefHeight="45.9" prefWidth="211.0" style="-fx-background-color: white;" text="Remove Machine" textFill="#d76961">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="4.0" layoutY="544.0" onAction="#btnBackOnAction" prefHeight="44.0" prefWidth="103.0" text="BACK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/Circle_Carret_Left.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <ImageView fitHeight="62.0" fitWidth="224.0" layoutX="26.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="32.0" layoutY="95.0" onAction="#btnMachineIssuedDetailsOnAction" prefHeight="45.9" prefWidth="211.0" style="-fx-background-color: white;" text="Machine Issue Details" textFill="#737079">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

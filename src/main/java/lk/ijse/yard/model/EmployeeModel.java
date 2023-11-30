@@ -1,11 +1,11 @@
 package lk.ijse.yard.model;
 
+import javafx.scene.control.Alert;
 import lk.ijse.yard.db.DbConnection;
 import lk.ijse.yard.dto.EmployeeDto;
-import lk.ijse.yard.dto.MaterialDto;
+import lk.ijse.yard.dto.VehicleDto;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.commons.digester.annotations.rules.BeanPropertySetter;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,6 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 public class EmployeeModel {
+
 
 
     public static int getRawCount() throws SQLException {
@@ -121,7 +122,7 @@ public class EmployeeModel {
 
     }
 
-    public List<EmployeeDto> loadAllDriverse() throws SQLException {
+    public static List<EmployeeDto> loadAllDriverse() throws SQLException {
 
         Connection connection = DbConnection.getInstance().getConnection();
         String sql = "SELECT * FROM employe WHERE job_title = ? ";
@@ -145,31 +146,142 @@ public class EmployeeModel {
         return dtoList;
     }
 
-    public boolean changeAvailability(EmployeeDto dto) throws SQLException {
+    public boolean changeAvailability(EmployeeDto dto, String availability) throws SQLException {
+        boolean isChangeCorrectly = false;
+        Connection connection = null;
+        try {
+            connection = DbConnection.getInstance().getConnection();
+            connection.setAutoCommit(false);
+
+            boolean firstlyChangeEmployeTable = setAvailabilityforEmployeTable(dto , availability);
+            if (firstlyChangeEmployeTable){
+                boolean secondlyUpdateDriverTable = VehicleModel.setDriverAvailability(dto , availability);
+                if (secondlyUpdateDriverTable){
+                    connection.commit();
+                    isChangeCorrectly = true;
+                }
+            }
+        } catch (SQLException e) {
+            connection.rollback();
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        } finally {
+            connection.setAutoCommit(true);
+        }
+        return  isChangeCorrectly;
+
+
+    }
+
+    private boolean setAvailabilityforEmployeTable(EmployeeDto dto, String availability) throws SQLException {
 
         Connection connection = DbConnection.getInstance().getConnection();
 
         String sql = "UPDATE employe SET availability = ? WHERE e_id = ?";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
-        pstm.setString(1, "AV");
+        pstm.setString(1, availability);
         pstm.setString(2, dto.getEmpID());
 
         return pstm.executeUpdate() > 0;
 
     }
 
-    public boolean changeNonAvailability(EmployeeDto dto) throws SQLException {
+
+    public String getDriverAvailability(String empId) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
-        String sql = "UPDATE employe SET availability = ? WHERE e_id = ?";
+        String sql = "SELECT availability FROM employe WHERE e_id = ? ";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
-        pstm.setString(1, "NA");
-        pstm.setString(2, dto.getEmpID());
+        pstm.setString(1,empId);
 
-        return pstm.executeUpdate() > 0;
+        ResultSet resultSet = pstm.executeQuery();
+        String availability = "";
 
+        while (resultSet.next()){
+            availability = resultSet.getString(1);
+        }
+
+        return availability;
+
+    }
+
+    public EmployeeDto getEmployeeDetails(String empId) throws SQLException {
+
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT * FROM employe WHERE e_id = ? ";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1,empId);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        EmployeeDto dto = null;
+
+        while (resultSet.next()){
+            dto = new EmployeeDto(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5)
+            );
+        }
+        return dto;
+    }
+
+
+    public boolean deleteRegisterDriverse(String empId) throws SQLException {
+        boolean isDelete = false;
+        Connection connection = null;
+
+        try {
+            connection = DbConnection.getInstance().getConnection();
+            connection.setAutoCommit(false);
+
+            boolean firstlyUpdateVehicleTable = VehicleModel.updateProcessDriverDeletion(empId);
+
+            if (firstlyUpdateVehicleTable){
+                boolean secondlyDeleteEmploye = deleteEmployee(empId);
+                if (secondlyDeleteEmploye){
+                    connection.commit();
+                    isDelete = true;
+                }
+            }
+        } catch (SQLException e) {
+            connection.rollback();
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+        } finally {
+            connection.setAutoCommit(true);
+        }
+        return  isDelete;
+
+    }
+
+    public boolean deleteEmployee(String empId) throws SQLException {
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "DELETE FROM employe WHERE e_id = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1, empId);
+
+        return  pstm.executeUpdate() > 0 ;
+
+    }
+
+    public static String getName(String empId) throws SQLException {
+
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT e_name FROM employe WHERE e_id = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1, empId);
+        ResultSet resultSet = pstm.executeQuery();
+
+        String name = null;
+        if (resultSet.next()) { name = resultSet.getString(1);}
+
+        return  name;
     }
 
 

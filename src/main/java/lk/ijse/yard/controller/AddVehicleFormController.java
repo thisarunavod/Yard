@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
 import lk.ijse.yard.dto.EmployeeDto;
 import lk.ijse.yard.dto.SupplierDto;
+import lk.ijse.yard.dto.VehicleDto;
 import lk.ijse.yard.model.EmployeeModel;
 import lk.ijse.yard.model.VehicleModel;
 
@@ -20,6 +21,7 @@ import java.util.regex.Pattern;
 public class AddVehicleFormController {
 
     private final VehicleModel vehicleModel = new VehicleModel();
+    private final EmployeeModel employeeModel = new EmployeeModel();
 
 
     @FXML
@@ -39,10 +41,31 @@ public class AddVehicleFormController {
 
             String vehicleID = txtFieldVehicleID.getText();
             String name = txtFieldVehicleName.getText();
+            String empId = cmbDrivwerID.getValue();
+            String rootStatus = "ON_yard";
+            String driverAvailability = setDriverAvailability(empId);
+            String removeOrWorking = "working";
 
+            try {
+                var vehicleDto = new VehicleDto(vehicleID , name , empId , rootStatus , driverAvailability , removeOrWorking);
+                boolean isAddVehicle = vehicleModel.addVehicle(vehicleDto);
+                if (isAddVehicle){ new Alert(Alert.AlertType.INFORMATION,"Vehicle Details Added Successfully !!").show(); clearFields();}
+
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+            }
         }
+    }
 
+    private String setDriverAvailability(String empId) {
 
+        String availability = null;
+        if (empId == null){ return availability ;}
+        else{
+            try {  availability = employeeModel.getDriverAvailability(empId); return availability; }
+            catch (SQLException e) { e.printStackTrace(); }
+        }
+        return availability;
     }
 
     private boolean validateVehicle() {
@@ -88,7 +111,13 @@ public class AddVehicleFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
+    }
 
 
+
+    private void clearFields() {
+        txtFieldVehicleID.setText("");
+        cmbDrivwerID.getSelectionModel().clearSelection();
+        txtFieldVehicleName.setText("");
     }
 }

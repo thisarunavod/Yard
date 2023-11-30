@@ -21,12 +21,26 @@ public class VehicleManageFormController {
     private JFXButton btnUpdateEmployee;
 
     @FXML
+    private JFXButton btnDailyAvailableVehicleList;
+
+    @FXML
     private AnchorPane mainRoot;
 
     @FXML
     private AnchorPane root;
 
     private Parent nodeAddVehicle;
+    private Parent nodeUpdateVehicle;
+    private Parent nodeRemoveVehicle;
+    private Parent nodeListOfVehicle;
+    private Parent nodeDailyAvailableVehicleList;
+
+    @FXML
+    void initialize() throws IOException {
+        nodeListOfVehicle = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/vehicles/vehicleList_form.fxml"));
+        this.root.getChildren().clear();
+        this.root.getChildren().add(nodeListOfVehicle);
+    }
 
     @FXML
     void btnAddVehicleOnAction(ActionEvent event) throws IOException {
@@ -48,18 +62,47 @@ public class VehicleManageFormController {
     }
 
     @FXML
-    void btnDeleteVehicleOnAction(ActionEvent event) {
+    void btnDeleteVehicleOnAction(ActionEvent event) throws IOException {
+
+        nodeRemoveVehicle = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/vehicles/remove_vehicle_form.fxml"));
+        this.root.getChildren().clear();
+        this.root.getChildren().add(nodeRemoveVehicle);
 
     }
 
     @FXML
-    void btnOnActionUpdateVehicle(ActionEvent event) {
+    void btnOnActionUpdateVehicle(ActionEvent event) throws IOException {
+        nodeUpdateVehicle = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/vehicles/updateVehicle_form.fxml"));
+        this.root.getChildren().clear();
+        this.root.getChildren().add(nodeUpdateVehicle);
 
     }
 
     @FXML
-    void btnVehicleListOnAction(ActionEvent event) {
+    void btnVehicleListOnAction(ActionEvent event) throws IOException {
+        nodeListOfVehicle = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/vehicles/vehicleList_form.fxml"));
+        this.root.getChildren().clear();
+        this.root.getChildren().add(nodeListOfVehicle);
+    }
 
+    @FXML
+    void btnOnActionDailyAvailableVehicleList(ActionEvent event) throws IOException {
+        nodeDailyAvailableVehicleList = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/vehicles/dailyAvailableVehicleList_form.fxml"));
+        Scene scene = new Scene(nodeDailyAvailableVehicleList);
+        Stage stage = (Stage) this.mainRoot.getScene().getWindow();
+        stage.setTitle("Daily Available Vehicles");
+        stage.setScene(scene);
+        stage.centerOnScreen();
+    }
+
+    @FXML
+    void btnOnActionVehicleRepairDetails(ActionEvent event) throws IOException {
+        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/vehicles/vehicleRepair_form.fxml"));
+        Scene scene = new Scene(rootNode);
+        Stage stage = (Stage) this.mainRoot.getScene().getWindow();
+        stage.setTitle("Vehicle Repair Details");
+        stage.setScene(scene);
+        stage.centerOnScreen();
     }
 
 

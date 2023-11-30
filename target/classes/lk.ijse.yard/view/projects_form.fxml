@@ -51,7 +51,7 @@
             <Image url="@../Assets/singleFrame.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="38.0" layoutY="98.0" prefHeight="45.9" prefWidth="211.0" style="-fx-background-color: white;" text=" View Project Details " textFill="#737079">
+      <JFXButton layoutX="38.0" layoutY="98.0" onAction="#OnActionViewProjectDetails" prefHeight="45.9" prefWidth="211.0" style="-fx-background-color: white;" text=" VIEW Project Details " textFill="#737079">
          <font>
             <Font name="Andika Bold" size="15.0" />
          </font>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="mainRoot" prefHeight="429.0" prefWidth="1241.0" style="-fx-background-color: #f7f6ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.MachineIssueDetailsFormController">
+   <children>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="24.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Select Machine  ID" wrappingWidth="188.67822265625">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbMachineID" layoutX="35.0" layoutY="89.0" onAction="#cmbMachineIDOnAction" onMousePressed="#cmbMachineIDonMousePressed" prefHeight="24.0" prefWidth="180.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+      <Text fontSmoothingType="LCD" layoutX="24.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* M-Name" wrappingWidth="68.0">
+         <font>
+            <Font name="Andika" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#32678d" layoutX="260.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Machine Issue Details" wrappingWidth="313.0">
+         <font>
+            <Font name="Andika Bold" size="25.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblMachineName" layoutX="104.0" layoutY="131.0" prefHeight="24.0" prefWidth="138.0" />
+      <JFXTextArea fx:id="txtFieldMachineIssuedID" layoutX="33.0" layoutY="199.0" prefHeight="34.0" prefWidth="180.0">
+         <font>
+            <Font size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXTextArea>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="24.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Enter Issue ID &amp; Date" wrappingWidth="188.67822265625">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="datePicker" layoutX="32.0" layoutY="243.0" promptText="Select Issue Date">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </DatePicker>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="24.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Select Project NO" wrappingWidth="205.67822265625">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbProjectNo" layoutX="33.0" layoutY="309.0" onAction="#cmbProjectNoOnAction" onMousePressed="#cmbProjectNOonMousePressed" prefHeight="24.0" prefWidth="198.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+      <Text fill="#5b5959" fontSmoothingType="LCD" layoutX="24.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Select Available Vehicle  ID" wrappingWidth="205.67822265625">
+         <font>
+            <Font name="Andika Bold" size="14.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbVehicleID" layoutX="33.0" layoutY="379.0" onAction="#cmbVehicleIDOnAction" onMousePressed="#cmbVehicleIDonMousePressed" prefHeight="24.0" prefWidth="198.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+      <Text fontSmoothingType="LCD" layoutX="24.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Vehicle Name" wrappingWidth="188.67822265625">
+         <font>
+            <Font name="Andika" size="14.0" />
+         </font>
+      </Text>
+      <Label fx:id="lblVehicleName" layoutX="35.0" layoutY="442.0" prefHeight="34.0" prefWidth="189.0" />
+      <JFXButton layoutX="35.0" layoutY="494.0" onAction="#btnAddMachineIssueDetails" prefHeight="34.0" prefWidth="189.0" style="-fx-background-color: #96d64f;" text="ADD for Issue Details" textFill="WHITE">
+         <font>
+            <Font name="KacstScreen" size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tableMachineIssueDetails" layoutX="260.0" layoutY="47.0" prefHeight="546.0" prefWidth="966.0">
+        <columns>
+          <TableColumn fx:id="colIssuedDate" prefWidth="144.0" text="Date" />
+          <TableColumn fx:id="colProjectNO" prefWidth="77.0" text="PR-NO" />
+            <TableColumn fx:id="colIssuedIUD" prefWidth="99.0" text="Issued ID" />
+            <TableColumn fx:id="colMachineID" prefWidth="95.0" text="Machine ID" />
+            <TableColumn fx:id="colMachineName" prefWidth="193.0" text="Machine Name" />
+            <TableColumn fx:id="colVehicleID" prefWidth="74.0" text="V- ID" />
+            <TableColumn fx:id="colVehicleName" prefWidth="204.0" text="Vehicle Name" />
+            <TableColumn fx:id="colAction" prefWidth="79.0" text="Action" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="8.0" layoutY="549.0" onAction="#btnBackOnAction" prefHeight="34.0" prefWidth="103.0" text="BACK">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Assets/Circle_Carret_Left.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

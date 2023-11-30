@@ -4,10 +4,13 @@ import com.google.protobuf.DoubleValue;
 import javafx.collections.ObservableList;
 import lk.ijse.yard.db.DbConnection;
 import lk.ijse.yard.dto.MaterialDto;
+import lk.ijse.yard.dto.MaterialIssuedDetailsDto;
 import lk.ijse.yard.dto.ProjectDto;
+import lk.ijse.yard.dto.ProjectMaterialRequirementDto;
 import lk.ijse.yard.dto.Tm.ProjectMaterialRequirementTm;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectMaterialRequirementModel {
@@ -64,8 +67,12 @@ public class ProjectMaterialRequirementModel {
             pstm.setString(1,projectDto.getProjectName());
             pstm.setDouble(2, (Double.valueOf(obList.get(i).getReqQty().getText())));
             pstm.setString(3,projectDto.getProjectNO());
-            pstm.setString(4,obList.get(i).getMaterialID());
 
+            setNewAddedMaterial(projectDto,obList.get(i).getMaterialID(),obList.get(i).getUnit());
+
+            pstm.setString(4,obList.get(i).getMaterialID());
+            System.out.println(obList.get(i).getMaterialID());
+            System.out.println(Double.valueOf(obList.get(i).getReqQty().getText()));
             affectedRaw = affectedRaw + pstm.executeUpdate();
 
         }
@@ -84,6 +91,106 @@ public class ProjectMaterialRequirementModel {
 
         return  pstm.executeUpdate() > 0 ;
 
+    }
+
+    public static boolean updateIssueQty(MaterialIssuedDetailsDto issuedDto ,String comment) throws SQLException {
+
+        String sql ="";
+        if (comment.equals("+")){
+            sql = "UPDATE project_material_requirements SET issue_qty = issue_qty + ?  WHERE p_no = ? AND m_id = ? ";
+        }else{
+            sql = "UPDATE project_material_requirements SET issue_qty = issue_qty - ?  WHERE p_no = ? AND m_id = ? ";
+        }
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setDouble(1,issuedDto.getIssuedQty());
+        pstm.setString(2,issuedDto.getProjectNo());
+        pstm.setString(3,issuedDto.getMaterialID());
+
+        return pstm.executeUpdate() > 0;
+    }
+
+    public static void setNewAddedMaterial(ProjectDto projectDto, String mID, String unit) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "SELECT p_no FROM project_material_requirements WHERE m_id = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1,mID);
+        ResultSet resultSet = pstm.executeQuery();
+        if (!resultSet.next()){
+            setMaterial(projectDto , mID , unit);
+        }
+
+    }
+
+    private static void setMaterial(ProjectDto dto, String mID , String unit) throws SQLException {
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "INSERT INTO project_material_requirements VALUES (?,?,?,?,?,?)";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1,dto.getProjectNO());
+        pstm.setString(2,dto.getProjectName());
+        pstm.setString(3,mID);
+        pstm.setDouble(4,0.0);
+        pstm.setDouble(5, 0.0);
+        pstm.setString(6, unit);
+
+        pstm.executeUpdate();
+    }
+
+    public boolean checkNonRequiremets(String pNo, String materialID) throws SQLException {
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "SELECT required_qty FROM project_material_requirements WHERE p_no = ? AND m_id = ? ";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1,pNo);
+        pstm.setString(2,materialID);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        if (resultSet.next()){ return resultSet.getDouble(1) == 0 ;}
+        else{ return true;}
+
+    }
+
+    public boolean checkRequiremetsQtyExceed(String pNo, String materialID , double qty) throws SQLException {
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "SELECT required_qty - issue_qty AS checkRange FROM project_material_requirements WHERE p_no = ? AND m_id = ? ";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1,pNo);
+        pstm.setString(2,materialID);
+        ResultSet resultSet = pstm.executeQuery();
+        boolean exceed = false;
+        if (resultSet.next()) {
+
+            exceed = !(resultSet.getDouble(1) > qty);
+        }
+        return exceed ;
+
+    }
+
+    public List<ProjectMaterialRequirementDto> loadRequirements(String projectNO) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = " SELECT * FROM project_material_requirements WHERE p_no = ? AND required_qty > 0 ";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1,projectNO);
+
+        List<ProjectMaterialRequirementDto> dtoList = new ArrayList<>();
+        ResultSet resultSet = pstm.executeQuery();
+        while (resultSet.next()){
+            var dto  = new ProjectMaterialRequirementDto(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getDouble(4),
+                    resultSet.getDouble(5),
+                    resultSet.getString(6)
+            );
+            dtoList.add(dto);
+        }
+
+        return  dtoList;
     }
 /*
     p_no VARCHAR(20) NOT NULL ,
