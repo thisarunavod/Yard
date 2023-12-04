@@ -125,10 +125,10 @@
             <TableColumn fx:id="colMaterialID" prefWidth="105.0" text="m_ID" />
             <TableColumn fx:id="colName" prefWidth="220.0" text="Name" />
             <TableColumn fx:id="colType" prefWidth="135.0" text="Type" />
-            <TableColumn fx:id="colQty" minWidth="0.0" prefWidth="83.0" text="Qty" />
-            <TableColumn fx:id="colUnit" prefWidth="59.0" text="Unit" />
-            <TableColumn fx:id="colAction" prefWidth="77.0" text="del" />
-            <TableColumn fx:id="colActionUpdate" prefWidth="76.0" text="upd" />
+            <TableColumn fx:id="colQty" minWidth="0.0" prefWidth="74.0" text="Qty" />
+            <TableColumn fx:id="colUnit" minWidth="0.0" prefWidth="132.0" text="Unit" />
+            <TableColumn fx:id="colAction" minWidth="0.0" prefWidth="0.0" text="upd" />
+            <TableColumn fx:id="colActionUpdate" minWidth="0.0" prefWidth="82.0" text="Del" />
         </columns>
       </TableView>
       <JFXButton layoutX="6.0" layoutY="590.0" onAction="#btnBackOnAction" prefHeight="34.0" prefWidth="103.0" text="BACK">
@@ -142,6 +142,11 @@
                </image>
             </ImageView>
          </graphic>
+      </JFXButton>
+      <JFXButton layoutX="1151.0" layoutY="599.0" onAction="#onActionReports" prefHeight="34.0" prefWidth="180.0" style="-fx-background-color: #32678d;" text="Received Details Report" textFill="WHITE">
+         <font>
+            <Font name="Andika Bold" size="13.0" />
+         </font>
       </JFXButton>
    </children>
 </AnchorPane>

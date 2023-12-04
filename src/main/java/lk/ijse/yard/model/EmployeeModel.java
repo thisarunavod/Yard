@@ -285,4 +285,26 @@ public class EmployeeModel {
     }
 
 
+    public List<EmployeeDto> loadAllLabors() throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        String sql = "SELECT * FROM employe WHERE job_title = ? ";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1,"LABOR");
+        ResultSet resultSet = pstm.executeQuery();
+
+        List<EmployeeDto> dtoList = new ArrayList<>();
+        while (resultSet.next()){
+
+            var dtoLabor = new EmployeeDto(
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5)
+            );
+            dtoList.add(dtoLabor);
+        }
+
+        return dtoList;
+    }
 }

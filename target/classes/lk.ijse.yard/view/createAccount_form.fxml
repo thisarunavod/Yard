@@ -1,43 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.CreateAccountFormController">
+<AnchorPane prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.CreateAccountFormController">
    <children>
-      <ImageView fitHeight="413.0" fitWidth="281.0" layoutX="310.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Assets/CA.png" />
-         </image>
-      </ImageView>
-      <TextField layoutX="340.0" layoutY="204.0" prefHeight="20.0" prefWidth="223.0" style="-fx-background-color: F5F5F5;" />
-      <Text fill="#4a4a4a" layoutX="341.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="__________________________________" wrappingWidth="223.0" />
-      <Text fill="#4a4a4a" layoutX="341.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="__________________________________" wrappingWidth="223.0" />
-      <Text fill="#4a4a4a" layoutX="341.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="__________________________________" wrappingWidth="223.0" />
-      <Text fill="#4a4a4a" layoutX="343.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" text="__________________________________" wrappingWidth="223.0" />
-      <TextField layoutX="340.0" layoutY="145.0" prefHeight="24.0" prefWidth="223.0" style="-fx-background-color: F5F5F5;" />
-      <TextField layoutX="340.0" layoutY="264.0" prefHeight="20.0" prefWidth="223.0" style="-fx-background-color: F5F5F5;" />
-      <TextField layoutX="342.0" layoutY="330.0" prefHeight="20.0" prefWidth="223.0" style="-fx-background-color: F5F5F5;" />
-      <Text fill="#575757" fontSmoothingType="LCD" layoutX="470.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Add USER" wrappingWidth="99.0">
+      <JFXTextArea fx:id="txtUserID" layoutX="57.0" layoutY="89.0" prefHeight="36.0" prefWidth="281.0" />
+      <Text fill="#555457" fontSmoothingType="LCD" layoutX="44.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Enter User ID" wrappingWidth="179.39617919921875">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="Andika" size="15.0" />
          </font>
+      </Text>
+      <JFXTextArea fx:id="txtUserName" layoutX="57.0" layoutY="169.0" prefHeight="36.0" prefWidth="281.0" />
+      <Text fill="#555457" fontSmoothingType="LCD" layoutX="44.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Enter User Name" wrappingWidth="179.39617919921875">
+         <font>
+            <Font name="Andika" size="15.0" />
+         </font>
+      </Text>
+      <JFXTextArea fx:id="txtUserEmail" layoutX="57.0" layoutY="249.0" prefHeight="36.0" prefWidth="281.0" />
+      <Text fill="#555457" fontSmoothingType="LCD" layoutX="44.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Enter User Email" wrappingWidth="179.39617919921875">
+         <font>
+            <Font name="Andika" size="15.0" />
+         </font>
+      </Text>
+      <JFXTextArea fx:id="txtUserPassword" layoutX="57.0" layoutY="329.0" prefHeight="36.0" prefWidth="281.0" />
+      <Text fill="#555457" fontSmoothingType="LCD" layoutX="44.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Enter Password" wrappingWidth="179.39617919921875">
+         <font>
+            <Font name="Andika" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="#3180a8" fontSmoothingType="LCD" layoutX="107.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREATE ACCOUNT" wrappingWidth="185.39617919921875">
+         <font>
+            <Font name="Andika Bold" size="20.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="126.0" layoutY="440.0" onAction="#OnActionCreateAccount" prefHeight="36.0" prefWidth="146.0" style="-fx-background-color: #3180a8;" text="Create Account" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-      </Text>
-      <Text fill="#575757" fontSmoothingType="LCD" layoutX="330.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt; Back" wrappingWidth="99.0">
          <font>
-            <Font size="12.0" />
+            <Font name="System Bold" size="14.5" />
          </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="214.0" layoutY="392.0" onAction="#OnActionSendOTP" prefHeight="24.0" prefWidth="82.0" style="-fx-background-color: #96d64f;" text="Send OTP" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-      </Text>
+      </JFXButton>
+      <JFXTextArea fx:id="txtOTP" layoutX="57.0" layoutY="379.0" prefHeight="36.0" prefWidth="146.0" promptText="Enter OTP" />
    </children>
 </AnchorPane>

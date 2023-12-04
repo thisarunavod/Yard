@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2023-11-18T12:12:38 -->
+<!-- 2023-12-01T14:44:36 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MaterialList" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d0c596b0-3b58-4475-be9c-3a4720386705">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample Adapter"/>
@@ -29,50 +29,80 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
-	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band height="61" splitType="Stretch">
+		<band height="79" splitType="Stretch">
 			<staticText>
-				<reportElement x="119" y="0" width="100" height="30" uuid="7956c427-f944-4433-81db-c3727020cea7"/>
-				<text><![CDATA[m_id]]></text>
+				<reportElement x="190" y="9" width="190" height="30" uuid="7956c427-f944-4433-81db-c3727020cea7"/>
+				<textElement>
+					<font fontName="SansSerif" size="25" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Material List]]></text>
 			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
 			<staticText>
-				<reportElement x="249" y="0" width="100" height="30" uuid="ea47f10c-03ce-494f-9137-8b0639ed0bc8"/>
+				<reportElement x="139" y="0" width="81" height="30" uuid="ea47f10c-03ce-494f-9137-8b0639ed0bc8"/>
+				<textElement>
+					<font fontName="Andika" size="10" isBold="true"/>
+				</textElement>
 				<text><![CDATA[material_name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="370" y="0" width="100" height="30" uuid="38f5252e-349e-4822-8c79-553ff14c0bb3"/>
+				<reportElement x="489" y="-2" width="50" height="30" uuid="38f5252e-349e-4822-8c79-553ff14c0bb3"/>
+				<textElement>
+					<font fontName="Andika" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="-1" width="30" height="30" uuid="bc71f6a9-5ff6-4b92-ba91-17ec5d654399"/>
+				<textElement>
+					<font fontName="Andika" size="10" isBold="true"/>
+				</textElement>
 				<text><![CDATA[type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="407" y="-2" width="55" height="30" uuid="831c3413-0043-4552-b1a2-ad62ef42903c"/>
+				<textElement>
+					<font fontName="Andika" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qty Available]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="44" y="1" width="61" height="30" uuid="c68e8f60-38bb-4237-8bc6-133002299090"/>
+				<textElement>
+					<font fontName="Andika" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Material ID]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
+		<band height="48" splitType="Stretch">
 			<textField>
-				<reportElement x="120" y="42" width="100" height="30" uuid="fa9f4005-3875-49a4-bbc7-6a8d595706dd"/>
+				<reportElement x="45" y="10" width="80" height="30" uuid="fa9f4005-3875-49a4-bbc7-6a8d595706dd"/>
 				<textFieldExpression><![CDATA[$F{m_id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="249" y="41" width="100" height="30" uuid="72e44c92-3d79-4096-95ba-8898487d2ba2"/>
+				<reportElement x="138" y="11" width="100" height="30" uuid="72e44c92-3d79-4096-95ba-8898487d2ba2"/>
 				<textFieldExpression><![CDATA[$F{material_name}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="370" y="41" width="100" height="30" uuid="430a978a-6bb1-4a2a-ae08-465745624579"/>
+				<reportElement x="275" y="11" width="105" height="30" uuid="430a978a-6bb1-4a2a-ae08-465745624579"/>
 				<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="11" width="76" height="30" uuid="8aedd3be-279f-4ab0-ad27-4b3731a53590"/>
+				<textFieldExpression><![CDATA[$F{qty_available}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="491" y="11" width="100" height="30" uuid="d306140f-5ae7-4449-bf7f-21d2d65ec3be"/>
+				<textFieldExpression><![CDATA[$F{unit}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band splitType="Stretch"/>
 	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch"/>
-	</summary>
 </jasperReport>

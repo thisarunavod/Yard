@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2023-12-02T16:28:42 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Material_Issued_details_Landscape" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4fb7a7df-5558-4b4f-8375-0898fb979054">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample Adapter"/>
+	<queryString>
+		<![CDATA[SELECT  *  FROM material_send_details]]>
+	</queryString>
+	<field name="issue_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="m_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="p_no" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="issue_qty" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="v_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="issue_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="issue_id">
+		<groupExpression><![CDATA[$F{issue_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="250" y="-3" width="280" height="30" uuid="cfe4406a-4679-4a8a-a44c-5c23714f4850"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="21" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Material Issued Details]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="175" y="0" width="100" height="30" uuid="2363bf35-00c5-4beb-bca9-334da818867c"/>
+				<text><![CDATA[issue_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="0" width="100" height="30" uuid="5c56a698-19cb-43d9-bd0e-595ec1dc05b7"/>
+				<text><![CDATA[m_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="436" y="0" width="100" height="30" uuid="ce149e1e-a1f5-4afb-8ac6-6a65edfa6fc1"/>
+				<text><![CDATA[p_no]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="557" y="0" width="100" height="30" uuid="44b500b7-69fb-4e2e-9886-9ea9367c584d"/>
+				<text><![CDATA[issue_qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="712" y="0" width="100" height="30" uuid="b5d4cae9-f16a-4d21-876a-0d25f9a95660"/>
+				<text><![CDATA[v_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="31" y="5" width="100" height="30" uuid="2f57dd28-f5c2-4974-a346-e4738cd4ecfa"/>
+				<text><![CDATA[issue_date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="53" splitType="Stretch">
+			<textField>
+				<reportElement x="26" y="7" width="100" height="30" uuid="7b9429e6-087f-46cf-82c7-054b4db5f68d"/>
+				<textFieldExpression><![CDATA[$F{issue_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="175" y="7" width="100" height="30" uuid="f2eeafcb-ebf7-4886-bb47-741480ee12e0"/>
+				<textFieldExpression><![CDATA[$F{issue_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="304" y="7" width="100" height="30" uuid="9352bd13-1891-4b93-83b5-005099aa6316"/>
+				<textFieldExpression><![CDATA[$F{m_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="436" y="6" width="100" height="30" uuid="12376f98-371a-4f95-8fc7-6ddaf313caaf"/>
+				<textFieldExpression><![CDATA[$F{p_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="561" y="6" width="100" height="30" uuid="68d317f5-e37f-41eb-ab25-4a7396508108"/>
+				<textFieldExpression><![CDATA[$F{issue_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="712" y="6" width="100" height="30" uuid="7e649051-0f32-43a1-a343-e55bfe124554"/>
+				<textFieldExpression><![CDATA[$F{v_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

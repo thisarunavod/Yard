@@ -63,16 +63,29 @@ public class LoginFormController {
 
 
     @FXML
-    void OnForgotPassword(MouseEvent event) {
+    void OnForgotPassword(MouseEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent rootNode = null;
+        if (rootNode == null){rootNode = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/forgotpassword_form.fxml"));}
+        Scene scene = new Scene(rootNode);
+        stage.setTitle("Forgot Password");
+        stage.centerOnScreen();
+        stage.setScene(scene);
 
-
-
-
+        stage.show();
     }
 
     @FXML
-    void onCreateAccount(MouseEvent event) {
+    void onCreateAccount(MouseEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent rootNode = null;
+        if (rootNode == null){rootNode = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/createAccount_form.fxml"));}
+        Scene scene = new Scene(rootNode);
+        stage.setTitle("Forgot Password");
+        stage.centerOnScreen();
+        stage.setScene(scene);
 
+        stage.show();
     }
 
     @FXML

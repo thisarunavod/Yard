@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2023-12-01T15:58:27 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MaterialIssedDetals" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a73d6f94-b05a-4b09-9e07-fbaf0a68d64d">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample Adapter"/>
+	<queryString>
+		<![CDATA[SELECT  *  FROM  material_receive_details]]>
+	</queryString>
+	<field name="received_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sup_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="m_id" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="material_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="received_qty" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unit" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="received_date" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="received_id">
+		<groupExpression><![CDATA[$F{received_id}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="226" y="0" width="100" height="30" uuid="f487031c-0e3b-435f-9447-4e9c4e5612ab"/>
+				<text><![CDATA[sup_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="297" y="-1" width="100" height="30" uuid="b7a4a31e-6a56-4a74-8718-dab0cd2396c2"/>
+				<text><![CDATA[m_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="-1" width="100" height="30" uuid="f299cfa3-4ff8-478e-b3d0-1be819532c53"/>
+				<text><![CDATA[material_name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="514" y="-2" width="100" height="30" uuid="b9a9ae18-98b3-4ba8-8d57-4dc4cde2d3bb"/>
+				<text><![CDATA[type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="603" y="-3" width="100" height="30" uuid="744d3c51-f60d-43a4-a452-8536f1755055"/>
+				<text><![CDATA[received_qty]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="704" y="-3" width="100" height="30" uuid="7909c298-baf6-49db-b645-f7d043ad5a59"/>
+				<text><![CDATA[unit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="117" y="0" width="100" height="30" uuid="c6a29efa-19c8-49ec-9361-54b6388a5dde"/>
+				<text><![CDATA[received_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="269" y="-70" width="271" height="40" uuid="32d4a134-25bf-4715-a8d9-4636ad1742bf"/>
+				<textElement>
+					<font fontName="Andika" size="21" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Material Received Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="0" width="100" height="30" uuid="201d20b5-4580-410b-a8cd-ab03c0056d80"/>
+				<text><![CDATA[received_date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<textField>
+				<reportElement x="225" y="15" width="100" height="30" uuid="77bde922-5715-47ff-b98f-2a74bea19977"/>
+				<textFieldExpression><![CDATA[$F{sup_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="297" y="15" width="100" height="30" uuid="5e3f7cc1-c407-4b25-83d9-0b6b7bfaa97e"/>
+				<textFieldExpression><![CDATA[$F{m_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="14" width="100" height="30" uuid="ed86486b-7e4b-4920-bdaf-6ef9a131e9b4"/>
+				<textFieldExpression><![CDATA[$F{material_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="502" y="12" width="100" height="30" uuid="1d6496dc-76a9-4859-8eba-ada294ff96f2"/>
+				<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="621" y="11" width="100" height="30" uuid="466a389e-02a4-4d3e-9202-776077f82d7f"/>
+				<textFieldExpression><![CDATA[$F{received_qty}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="704" y="9" width="100" height="30" uuid="1f92f6e5-bb70-45c9-b43f-65358546c365"/>
+				<textFieldExpression><![CDATA[$F{unit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="116" y="15" width="100" height="30" uuid="edcaeaa1-b4fe-4700-ba27-38a54072abbe"/>
+				<textFieldExpression><![CDATA[$F{received_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="25" y="11" width="41" height="30" uuid="5b3b34a3-f7d9-45e7-91eb-ee515c1a9d00"/>
+				<textFieldExpression><![CDATA[$F{received_date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+</jasperReport>

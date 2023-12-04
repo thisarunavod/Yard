@@ -68,22 +68,21 @@ public class AddMaterialFormController {
     @FXML
     void btnADDOnAction(ActionEvent event) {
 
-        String materialId = txtFieldMaterialId.getText();   if (!validText(materialId)){ materialId = null; }
-        String materialName = txtFieldMaterialName.getText();  if (!validText(materialName)){ materialName = null; }
-        String type = cmbBoxMaterialType.getValue();  if(type == null){ new Alert(Alert.AlertType.INFORMATION,"Please select type !!").show();}
+        boolean isValidMaterialDetails = validMaterialsDetails();
 
-        double qtyAvailable = -1;
 
-        try { qtyAvailable = Double.parseDouble(txtFieldQtyAvailable.getText()); }
-        catch (NumberFormatException e) {
-            new Alert(Alert.AlertType.INFORMATION,"not valid qty !! ").show();
-        }
+        if (isValidMaterialDetails){
+            String materialId = txtFieldMaterialId.getText();
+            String materialName = txtFieldMaterialName.getText();
+            String type = cmbBoxMaterialType.getValue();
+            double qty = 0.0;
+            try {
+                 qty = Double.parseDouble(txtFieldQtyAvailable.getText());
+            } catch (NumberFormatException e) { }
 
-        String unit = unitLabel.getText();
+            String unit = unitLabel.getText();
 
-        if (type != null && qtyAvailable >=0   ){
-
-            var dtoMaterial = new MaterialDto(materialId,materialName,type,qtyAvailable,unit);
+            var dtoMaterial = new MaterialDto(materialId,materialName,type,qty,unit);
             var modelMaterial = new MaterialModel();
             try {
                 boolean isAdd = modelMaterial.addMatrials(dtoMaterial);
@@ -96,15 +95,8 @@ public class AddMaterialFormController {
             }
         }
     }
-    @FXML
-    void btnMRDetailsOnAction(ActionEvent event) throws IOException {
-            Parent rootNode = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/material_Received _Details.fxml"));
-            Scene scene = new Scene(rootNode);
-            Stage stage = (Stage) this.root.getScene().getWindow();
-            stage.setTitle("Received Details");
-            stage.setScene(scene);
-            stage.centerOnScreen();
-    }
+
+
 
     private void setMaterialsTypeForCmbBox(){
         type.add("AGGREGATE");
@@ -127,5 +119,31 @@ public class AddMaterialFormController {
             if (text.charAt(i) != ' '){  return true;}
         }
         return false;
+    }
+
+
+    private boolean validMaterialsDetails() {
+
+
+        String materialID  = txtFieldMaterialId.getText();
+        boolean ValidMaterialID = Pattern.matches("^[A-Za-z]{2,}[0-9]{3,}$",materialID);
+        if (!ValidMaterialID) { new Alert(Alert.AlertType.ERROR,"Invalid Material ID !!").show(); return false;}
+
+        String materialName = txtFieldMaterialName.getText();
+        boolean validMaterialName = Pattern.matches("^[#.0-9a-zA-Z\\s,-]+$",materialName);
+        if (!validMaterialName) { new Alert(Alert.AlertType.ERROR,"Invalid Material Name !!").show(); return false;}
+
+        if (cmbBoxMaterialType.getValue() == null){
+            new Alert(Alert.AlertType.ERROR,"Not Select Material Type !!").show();
+            return false;
+        }
+
+        String qty = txtFieldQtyAvailable.getText();
+        boolean validQty = Pattern.matches("^[0-9]+(?:\\.[0-9]+)?$",qty);
+        if (!validQty){ new Alert(Alert.AlertType.ERROR,"invalid Employee address !").show(); return false;}
+
+
+        return true;
+
     }
 }

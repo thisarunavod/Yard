@@ -24,7 +24,12 @@ public class MachineManageFormController {
     private Parent nodeMachineList;
     private Parent nodeMachineIssuedDetails;
 
-
+    @FXML
+    void initialize() throws IOException {
+        nodeMachineList = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/machines/machineList_form.fxml"));
+        this.root.getChildren().clear();
+        this.root.getChildren().add(nodeMachineList);
+    }
 
     @FXML
     void btnAddMachineOnAction(ActionEvent event) throws IOException {

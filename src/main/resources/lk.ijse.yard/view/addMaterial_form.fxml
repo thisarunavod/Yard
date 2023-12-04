@@ -81,13 +81,5 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="385.0" layoutY="551.0" onAction="#btnMRDetailsOnAction" prefHeight="38.0" prefWidth="224.0" style="-fx-background-color: #96d64f;" text="Material Received Details" textFill="WHITE">
-         <font>
-            <Font name="Andika Bold" size="14.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
    </children>
 </AnchorPane>

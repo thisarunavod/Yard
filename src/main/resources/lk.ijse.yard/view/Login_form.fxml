@@ -11,19 +11,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="rootNode" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.LoginFormController">
+<AnchorPane fx:id="rootNode" prefHeight="536.0" prefWidth="532.0" style="-fx-background-color: #f8f8f8;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.LoginFormController">
    <children>
-      <ImageView fitHeight="358.0" fitWidth="377.0" layoutX="306.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="358.0" fitWidth="377.0" layoutX="122.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Assets/log5.png" />
          </image>
       </ImageView>
-      <Text fill="#6e929e" fontSmoothingType="LCD" layoutX="251.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R&amp;J YARD SYSTEM" wrappingWidth="419.39617919921875">
+      <Text fill="#6e929e" fontSmoothingType="LCD" layoutX="108.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="R&amp;J YARD SYSTEM" wrappingWidth="326.39617919921875">
          <font>
-            <Font name="System Bold" size="40.0" />
+            <Font name="Andika Bold" size="35.0" />
          </font>
       </Text>
-      <Text fill="#757575" fontSmoothingType="LCD" layoutX="382.0" layoutY="478.0" onMouseClicked="#onCreateAccount" strokeType="OUTSIDE" strokeWidth="0.0" text=" Or Create Account" wrappingWidth="137.39617919921875">
+      <Text fill="#757575" fontSmoothingType="LCD" layoutX="198.0" layoutY="452.0" onMouseClicked="#onCreateAccount" strokeType="OUTSIDE" strokeWidth="0.0" text=" Or Create Account" wrappingWidth="137.39617919921875">
          <font>
             <Font name="DejaVu Sans" size="14.0" />
          </font>
@@ -31,7 +31,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Text>
-      <TextField fx:id="txtFieldUid" layoutX="368.0" layoutY="234.0" prefHeight="33.0" prefWidth="192.0" promptText="Enter Uder ID" style="-fx-background-color: F3F2F2;">
+      <TextField fx:id="txtFieldUid" layoutX="184.0" layoutY="208.0" prefHeight="33.0" prefWidth="192.0" promptText="Enter Uder ID" style="-fx-background-color: F3F2F2;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -39,7 +39,7 @@
             <Font size="12.0" />
          </font>
       </TextField>
-      <ImageView fitHeight="33.0" fitWidth="119.0" layoutX="398.0" layoutY="405.0" onMouseClicked="#onActionLogin" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="33.0" fitWidth="119.0" layoutX="214.0" layoutY="379.0" onMouseClicked="#onActionLogin" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Assets/logBtn2.png" />
          </image>
@@ -47,7 +47,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Text fill="#5b5757" fontSmoothingType="LCD" layoutX="455.0" layoutY="376.0" onMouseClicked="#OnForgotPassword" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Password?" wrappingWidth="112.39617919921875">
+      <Text fill="#5b5757" fontSmoothingType="LCD" layoutX="271.0" layoutY="350.0" onMouseClicked="#OnForgotPassword" strokeType="OUTSIDE" strokeWidth="0.0" text="Forgot Password?" wrappingWidth="112.39617919921875">
          <font>
             <Font name="DejaVu Sans" size="12.0" />
          </font>
@@ -55,12 +55,20 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Text>
-      <PasswordField fx:id="txtFieldPw" layoutX="366.0" layoutY="309.0" onKeyTyped="#PwFieldKeyTyped" prefHeight="33.0" prefWidth="192.0" promptText="Enter Password" style="-fx-background-color: F3F2F2;" />
-      <ToggleButton fx:id="btnToogle" layoutX="516.0" layoutY="313.0" mnemonicParsing="false" onAction="#tooggleBtnOnAction" prefHeight="24.0" prefWidth="42.0" style="-fx-background-color: F3F2F2;" text="show">
+      <PasswordField fx:id="txtFieldPw" layoutX="182.0" layoutY="283.0" onKeyTyped="#PwFieldKeyTyped" prefHeight="33.0" prefWidth="192.0" promptText="Enter Password" style="-fx-background-color: F3F2F2;" />
+      <ToggleButton fx:id="btnToogle" layoutX="332.0" layoutY="287.0" mnemonicParsing="false" onAction="#tooggleBtnOnAction" prefHeight="24.0" prefWidth="42.0" style="-fx-background-color: F3F2F2;" text="show">
          <font>
             <Font size="10.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ToggleButton>
-      <Label fx:id="lblShownPw" layoutX="338.0" layoutY="349.0" prefHeight="16.0" prefWidth="229.0" visible="false" />
+      <Label fx:id="lblShownPw" layoutX="154.0" layoutY="323.0" prefHeight="16.0" prefWidth="229.0" visible="false" />
+      <Text fill="#f8f8f8" layoutX="166.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="adlvjcsdkvjfbvkdfjbvkfdjbv" wrappingWidth="244.7294921875">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

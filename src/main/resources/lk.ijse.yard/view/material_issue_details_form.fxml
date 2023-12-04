@@ -27,9 +27,9 @@
             <TableColumn fx:id="colqty" minWidth="0.0" prefWidth="61.0" text="qty" />
             <TableColumn fx:id="colUnit" prefWidth="61.0" text="unit" />
             <TableColumn fx:id="colVehicleID" prefWidth="66.0" text="V-ID" />
-            <TableColumn fx:id="colVehicleName" minWidth="9.0" prefWidth="133.0" text="V-Name" />
-            <TableColumn fx:id="colActionUpdate" prefWidth="65.0" text="UPD" />
-            <TableColumn fx:id="colActionDelete" prefWidth="61.0" text="DEL" />
+            <TableColumn fx:id="colVehicleName" minWidth="9.0" prefWidth="191.0" text="V-Name" />
+            <TableColumn fx:id="colActionUpdate" minWidth="0.0" prefWidth="0.0" text="UPD" />
+            <TableColumn fx:id="colActionDelete" prefWidth="68.0" text="DEL" />
          </columns>
       </TableView>
       <AnchorPane fx:id="updatePane" focusTraversable="true" layoutX="617.0" layoutY="130.0" prefHeight="304.0" prefWidth="358.0" style="-fx-background-color: #FFFFFF;" visible="false">
@@ -187,5 +187,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXComboBox>
+      <JFXButton layoutX="1151.0" layoutY="599.0" onAction="#btnOnActionIssuedDetailsReport" prefHeight="34.0" prefWidth="180.0" style="-fx-background-color: #32678d;" text="Issued Details Reports" textFill="WHITE">
+         <font>
+            <Font name="Andika Bold" size="13.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

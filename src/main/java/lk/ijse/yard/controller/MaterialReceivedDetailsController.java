@@ -15,6 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.yard.db.DbConnection;
 import lk.ijse.yard.dto.MaterialDto;
 import lk.ijse.yard.dto.MaterialReceivedDetailsDto;
 import lk.ijse.yard.dto.SupplierDto;
@@ -22,8 +23,13 @@ import lk.ijse.yard.dto.Tm.MaterialReceivedDetailsTm;
 import lk.ijse.yard.model.MaterialModel;
 import lk.ijse.yard.model.MaterialReceivedDetailsModel;
 import lk.ijse.yard.model.SupplierModel;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -270,6 +276,22 @@ public class MaterialReceivedDetailsController {
 
     @FXML
     void btnNewSupplierID(ActionEvent event) throws IOException { goToSupplierManagePage(); }
+
+    @FXML
+    void onActionReports(ActionEvent event) throws JRException, SQLException {
+        InputStream resourceAsStream = getClass().getResourceAsStream("/lk.ijse.yard/Reports/MaterialIssedDetals.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+        JasperReport compileReport = JasperCompileManager.compileReport(load);
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        compileReport, //compiled report
+                        null,
+                        DbConnection.getInstance().getConnection() //database connection
+                );
+        JasperViewer.viewReport(jasperPrint,false);
+
+    }
 
 
     private void setOldDataforNewFields(MaterialDto dto) {

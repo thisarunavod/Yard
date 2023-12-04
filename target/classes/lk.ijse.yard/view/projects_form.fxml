@@ -10,17 +10,17 @@
 
 <AnchorPane fx:id="mainRoot" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.ProjectsFormController">
    <children>
-      <Text fill="#7b7986" fontSmoothingType="LCD" layoutX="11.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Projects Manage" wrappingWidth="252.7294921875">
+      <Text fill="#7b7986" fontSmoothingType="LCD" layoutX="19.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Projects Manage" wrappingWidth="252.7294921875">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Text>
-      <ImageView fitHeight="64.0" fitWidth="224.0" layoutX="32.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="64.0" fitWidth="224.0" layoutX="32.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Assets/singleFrame.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnADDproject" layoutX="39.0" layoutY="169.0" onAction="#btnAddProjectOnAction" prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: white;" text="ADD  PROJECT" textFill="#737079">
+      <JFXButton fx:id="btnADDproject" layoutX="39.0" layoutY="239.0" onAction="#btnAddProjectOnAction" prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: white;" text="ADD  PROJECT" textFill="#737079">
          <font>
             <Font name="Andika Bold" size="15.0" />
          </font>
@@ -29,11 +29,6 @@
          </cursor>
       </JFXButton>
       <AnchorPane fx:id="root" layoutX="305.0" layoutY="1.0" prefHeight="600.0" prefWidth="620.0" style="-fx-background-color: #f7f6ff;" />
-      <Text fill="#f7f6ff" fontSmoothingType="LCD" layoutX="11.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Materials Manage" wrappingWidth="252.7294921875">
-         <font>
-            <Font name="System Bold" size="25.0" />
-         </font>
-      </Text>
       <JFXButton layoutX="10.0" layoutY="542.0" onAction="#btnBackOnAction" prefHeight="44.0" prefWidth="103.0" text="BACK">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -46,25 +41,12 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <ImageView fitHeight="62.0" fitWidth="224.0" layoutX="32.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="62.0" fitWidth="224.0" layoutX="32.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Assets/singleFrame.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="38.0" layoutY="98.0" onAction="#OnActionViewProjectDetails" prefHeight="45.9" prefWidth="211.0" style="-fx-background-color: white;" text=" VIEW Project Details " textFill="#737079">
-         <font>
-            <Font name="Andika Bold" size="15.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
-      <ImageView fitHeight="64.0" fitWidth="224.0" layoutX="32.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Assets/singleFrame.png" />
-         </image>
-      </ImageView>
-      <JFXButton fx:id="btnUpdateProject" layoutX="39.0" layoutY="239.0" onAction="#btnOnActionUpdateProject" prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: white;" text="UPDATE Project Details" textFill="#737079">
+      <JFXButton layoutX="38.0" layoutY="168.0" onAction="#OnActionViewProjectDetails" prefHeight="45.9" prefWidth="211.0" style="-fx-background-color: white;" text=" VIEW Project Details " textFill="#737079">
          <font>
             <Font name="Andika Bold" size="15.0" />
          </font>
@@ -77,7 +59,20 @@
             <Image url="@../Assets/singleFrame.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnProjectList" layoutX="39.0" layoutY="309.0" onAction="#btnOnActionProjectList" prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: white;" text="LIST of  Projects" textFill="#737079">
+      <JFXButton fx:id="btnUpdateProject" layoutX="39.0" layoutY="309.0" onAction="#btnOnActionUpdateProject" prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: white;" text="UPDATE Project Details" textFill="#737079">
+         <font>
+            <Font name="Andika Bold" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="64.0" fitWidth="224.0" layoutX="32.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnProjectList" layoutX="39.0" layoutY="99.0" onAction="#btnOnActionProjectList" prefHeight="44.0" prefWidth="212.0" style="-fx-background-color: white;" text="LIST of  Projects" textFill="#737079">
          <font>
             <Font name="Andika Bold" size="15.0" />
          </font>

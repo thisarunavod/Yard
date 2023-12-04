@@ -39,9 +39,17 @@ public class EmployeeManageFormController {
     private Parent nodeUpdateEmployee;
     private Parent nodeEmployeeList;
     private Parent nodeDeleteEmployee;
+    private Parent nodeLaborList;
+    private Parent nodeAllEmployeeList;
 
     @FXML
-    void initialize(){ setEmployeRawCount(); }
+    void initialize() throws IOException {
+        setEmployeRawCount();
+
+        nodeAllEmployeeList = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/employees/AllEmployeeList_form.fxml"));
+        this.root.getChildren().clear();
+        this.root.getChildren().add(nodeAllEmployeeList);
+    }
 
     @FXML
     void btnDriverListOnAction(ActionEvent event) throws IOException {
@@ -58,10 +66,12 @@ public class EmployeeManageFormController {
     }
 
     @FXML
-    void btnLaborListOnAction(ActionEvent event) {
+    void btnLaborListOnAction(ActionEvent event) throws IOException {
+        nodeLaborList = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/employees/LaborList_form.fxml"));
+        this.root.getChildren().clear();
+        this.root.getChildren().add(nodeLaborList);
 
     }
-
 
     @FXML
     void btnAddEmployeeOnAction(ActionEvent event) throws IOException {
@@ -73,7 +83,6 @@ public class EmployeeManageFormController {
         this.root.getChildren().add(nodeAddEmployee);
 
     }
-
 
     @FXML
     void btnDeleteEmployeeOnAction(ActionEvent event) throws IOException {
@@ -91,8 +100,9 @@ public class EmployeeManageFormController {
 
     @FXML
     void btnOnActionListOfEmployee(ActionEvent event) throws IOException {
-
-
+        nodeAllEmployeeList = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/employees/AllEmployeeList_form.fxml"));
+        this.root.getChildren().clear();
+        this.root.getChildren().add(nodeAllEmployeeList);
     }
 
     @FXML

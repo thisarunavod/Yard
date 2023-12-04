@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="620.0" style="-fx-background-color: #f7f6ff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.yard.controller.AllEmployeeListFormController">
+   <children>
+      <Text fill="#26756d" fontSmoothingType="LCD" layoutX="34.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ALL Employee  List" wrappingWidth="220.0">
+         <font>
+            <Font name="Andika Bold" size="24.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tblLabor" layoutX="6.0" layoutY="42.0" prefHeight="547.0" prefWidth="604.0">
+         <columns>
+            <TableColumn fx:id="colEmployeeID" prefWidth="78.0" text="EMP _ID" />
+            <TableColumn fx:id="colEmployeeName" prefWidth="136.0" text="Name" />
+            <TableColumn fx:id="colAddress" prefWidth="180.0" text=" Address" />
+            <TableColumn fx:id="colJobType" prefWidth="122.0" text="JOB-type" />
+            <TableColumn fx:id="colAvailability" prefWidth="87.0" text="Availability" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -31,6 +31,13 @@ public class ProjectsFormController {
     private AnchorPane root;
 
     @FXML
+    void initialize() throws IOException {
+        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/projectList_form.fxml"));
+        this.root.getChildren().clear();
+        this.root.getChildren().add(rootNode);
+    }
+
+    @FXML
     void btnAddProjectOnAction(ActionEvent event) throws IOException {
         Parent rootNode = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/addProject_form.fxml"));
         Scene scene = new Scene(rootNode);
@@ -61,8 +68,9 @@ public class ProjectsFormController {
 
     @FXML
     void btnOnActionProjectList(ActionEvent event) throws IOException {
-
-
+        Parent rootNode = FXMLLoader.load(this.getClass().getResource("/lk.ijse.yard/view/projectList_form.fxml"));
+        this.root.getChildren().clear();
+        this.root.getChildren().add(rootNode);
     }
 
     @FXML

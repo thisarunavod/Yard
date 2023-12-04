@@ -37,25 +37,37 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ImageView fitHeight="399.0" fitWidth="344.0" layoutX="331.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Assets/Component%209.png" />
-         </image>
-      </ImageView>
-      <JFXButton layoutX="338.0" layoutY="91.0" onAction="#btnOnActionmanageMaterials" prefHeight="48.0" prefWidth="222.0" style="-fx-background-color: white;" text="Manage Materials" textFill="#737079">
-         <font>
-            <Font name="Andika Bold" size="15.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
-      <ImageView fitHeight="63.0" fitWidth="236.0" layoutX="331.0" layoutY="496.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="63.0" fitWidth="236.0" layoutX="473.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Assets/singleFrame.png" />
          </image>
       </ImageView>
-      <JFXButton layoutX="338.0" layoutY="158.0" onAction="#btnOnActionManageSuppliers" prefHeight="48.0" prefWidth="222.0" style="-fx-background-color: white;" text="Manage Suppliers" textFill="#737079">
+      <ImageView fitHeight="63.0" fitWidth="236.0" layoutX="473.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="236.0" layoutX="200.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="236.0" layoutX="473.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="236.0" layoutX="200.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="236.0" layoutX="200.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Assets/singleFrame.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="207.0" layoutY="149.0" onAction="#btnOnActionmanageMaterials" prefHeight="48.0" prefWidth="222.0" style="-fx-background-color: white;" text="Manage Materials" textFill="#165b8d">
          <font>
             <Font name="Andika Bold" size="15.0" />
          </font>
@@ -63,7 +75,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="338.0" layoutY="226.0" onAction="#btnOnActionProjects" prefHeight="48.0" prefWidth="222.0" style="-fx-background-color: white;" text="PROJECTS" textFill="#737079">
+      <JFXButton layoutX="207.0" layoutY="375.0" onAction="#btnOnActionManageSuppliers" prefHeight="48.0" prefWidth="222.0" style="-fx-background-color: white;" text="Manage Suppliers" textFill="#165b8d">
          <font>
             <Font name="Andika Bold" size="15.0" />
          </font>
@@ -71,7 +83,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="338.0" layoutY="295.0" onAction="#btnOnActionMachine" prefHeight="48.0" prefWidth="222.0" style="-fx-background-color: white;" text="Manage MACHINES" textFill="#737079">
+      <JFXButton layoutX="480.0" layoutY="149.0" onAction="#btnOnActionProjects" prefHeight="48.0" prefWidth="222.0" style="-fx-background-color: white;" text="PROJECTS" textFill="#165b8d">
          <font>
             <Font name="Andika Bold" size="15.0" />
          </font>
@@ -79,7 +91,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="338.0" layoutY="364.0" onAction="#btnOnActionVehicles" prefHeight="48.0" prefWidth="222.0" style="-fx-background-color: white;" text="Manage VEHICLES" textFill="#737079">
+      <JFXButton layoutX="208.0" layoutY="259.0" onAction="#btnOnActionMachine" prefHeight="47.0" prefWidth="222.0" style="-fx-background-color: white;" text="Manage MACHINES" textFill="#165b8d">
          <font>
             <Font name="Andika Bold" size="15.0" />
          </font>
@@ -87,7 +99,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="338.0" layoutY="433.0" onAction="#btnOnActionEmployee" prefHeight="48.0" prefWidth="222.0" style="-fx-background-color: white;" text="Employe Management" textFill="#737079">
+      <JFXButton layoutX="481.0" layoutY="259.0" onAction="#btnOnActionVehicles" prefHeight="48.0" prefWidth="222.0" style="-fx-background-color: white;" text="Manage VEHICLES" textFill="#165b8d">
          <font>
             <Font name="Andika Bold" size="15.0" />
          </font>
@@ -95,7 +107,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton layoutX="338.0" layoutY="501.0" onAction="#btnOnActionDWR" prefHeight="48.0" prefWidth="222.0" style="-fx-background-color: white;" text="DAILY WORK REPORTS" textFill="#737079">
+      <JFXButton layoutX="480.0" layoutY="374.0" onAction="#btnOnActionEmployee" prefHeight="48.0" prefWidth="222.0" style="-fx-background-color: white;" text="Employe Management" textFill="#165b8d">
          <font>
             <Font name="Andika Bold" size="15.0" />
          </font>
@@ -103,7 +115,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Label fx:id="label" layoutX="751.0" layoutY="25.0" prefHeight="44.0" prefWidth="148.0" textFill="#568cb5">
+      <Label fx:id="label" layoutX="745.0" layoutY="19.0" prefHeight="44.0" prefWidth="148.0" textFill="#568cb5">
          <font>
             <Font name="Andika Bold" size="25.0" />
          </font>

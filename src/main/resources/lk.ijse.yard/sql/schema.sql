@@ -8,8 +8,9 @@ CREATE TABLE user(
                      name VARCHAR(30) NOT NULL,
                      email VARCHAR(30),
                      password VARCHAR(25) NOT NULL
-
 );
+select * from machine_repairs;
+
 
 CREATE TABLE suppliers(
                           sup_id VARCHAR(6) PRIMARY KEY,
@@ -60,20 +61,13 @@ CREATE TABLE project_material_requirements(
                         PRIMARY KEY (p_no,m_id)
 );
 
-select * from project;
-select * from project_material_requirements;
-select * from material;
-SELECT required_qty - issue_qty AS checkRange FROM project_material_requirements WHERE p_no = 'P003' AND m_id ='AGG001';
-update project_material_requirements SET issue_qty = 0 WHERE p_no = 'P003';
+
 
 CREATE TABLE machine(
                         machine_id VARCHAR(6) PRIMARY KEY,
                         machine_name VARCHAR(25) NOT NULL,
                         status VARCHAR(20) NOT NULL
 );
-SELECT * FROM machine WHERE status NOT IN ('remove');
-SELECT * FROM machine;
-update machine set status = 'ON_yard' where status = 'remove';
 
 CREATE TABLE employe(
                         e_id VARCHAR(10) PRIMARY KEY,
@@ -82,15 +76,9 @@ CREATE TABLE employe(
                         job_title VARCHAR(15) NOT NULL,
                         availability VARCHAR(5) Null
 );
+SELECT * FROM  employe;
+DELETE FROM employe WHERE e_id ='DR004';
 
-# /////////////////////////////////////////////////////////////////////////////////////////////
-SELECT availability FROM employe WHERE  = 'DR003'
-SELECT e_id FROM vehicle  WHERE e_id = 'DR00';
-UPDATE employe set availability = 'NA' WHERE e_id = 'DR002';
-DELETE  FROM employe Where e_id = 'DR001';
-Select * from employe;
-desc vehicle;
-# /////////////////////////////////////////////////////////////////////////////////////////////
 
 CREATE TABLE vehicle(
                         v_id VARCHAR(15) PRIMARY KEY,
@@ -101,23 +89,9 @@ CREATE TABLE vehicle(
                         remove_or_working VARCHAR(10) NOT NULL ,
                         FOREIGN KEY (e_id) REFERENCES employe(e_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
-# /////////////////////////////////////////////////////////////////////////////////////////////
-SELECT * FROM vehicle WHERE  driver_availability LIKE 'AV%';
-UPDATE vehicle SET  e_id = NULL , driver_availability = NULL WHERE e_id = 'DR001';
-DELETE  FROM vehicle WHERE v_id ='V001';
-
-select * from employe;
-select * from vehicle;
-SELECT root_status FROM vehicle WHERE e_id = 'DR002';
-
-UPDATE vehicle SET  e_id = 'DR002' , driver_availability = 'AV' WHERE v_id = 'V001';
 
 
-SELECT * FROM employe WHERE  e_id NOT IN ('DR001') AND job_title = 'DRIVER';
-
-SELECT e_id FROM vehicle WHERE v_id = 'V002';
-# ////////////////////////////////////////////////////////////////////////////////////////
-
+SELECT * FROM  vehicle;
 
 CREATE TABLE material_send_details(
 
@@ -133,9 +107,6 @@ CREATE TABLE material_send_details(
 
 );
 
-select  * from material_send_details;
-DELETE  FROM material_send_details WHERE issue_id ='MI_RE1';
-TRUNCATE material_send_details;
 
 CREATE TABLE vehicle_repairs(
 
@@ -147,7 +118,6 @@ CREATE TABLE vehicle_repairs(
                                 FOREIGN KEY (v_id) REFERENCES vehicle(v_id) ON DELETE CASCADE ON   UPDATE CASCADE
 
 );
-select * from  vehicle_repairs;
 
 
 CREATE TABLE machine_send_details(

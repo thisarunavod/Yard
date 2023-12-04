@@ -45,9 +45,26 @@ public class LoginModel {
     }
 
 
+    public boolean isCorrectUserID(String userID) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
 
+        String sql = "SELECT user_id FROM user WHERE user_id = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1,userID);
+        ResultSet resultSet = pstm.executeQuery();
+        if (resultSet.next()){ return true;}
+        return false;
+    }
 
+    public boolean setUserPassword(String ID, String password) throws SQLException {
+        Connection connection = DbConnection.getInstance().getConnection();
 
+        String sql = "UPDATE user SET password = ? WHERE user_id = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1,password);
+        pstm.setString(2,ID);
 
+        return pstm.executeUpdate() > 0;
 
+    }
 }
